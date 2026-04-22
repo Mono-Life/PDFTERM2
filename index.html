@@ -141,16 +141,117 @@
     .shake{animation:shake .4s}
     @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(6px)}50%{transform:translateX(-6px)}75%{transform:translateX(4px)}}
 
-    @media (max-width:680px){
+    /* ========== تحسينات الهواتف ========== */
+    @media (max-width: 680px){
       body{padding:16px}
       #loginBox{padding:28px 20px 34px;border-radius:38px}
-      .files-buttons{display:flex;overflow-x:auto;gap:14px;padding-bottom:8px}
-      .file-btn{min-width:160px}
-      .btn,.action-btn{padding:13px 16px}
-      .theme-toggle{top:14px;left:14px;width:46px;height:46px}
+      
+      /* جعل أزرار الملفات تمرير أفقي مع تقليل حجم الزر */
+      .files-buttons{
+        display: flex;
+        overflow-x: auto;
+        gap: 14px;
+        padding-bottom: 12px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .file-btn{
+        min-width: 140px;      /* عرض مناسب للهواتف */
+        padding: 12px 8px;
+        font-size: 0.85rem;
+        scroll-snap-align: start;
+      }
+      .file-btn i{font-size: 1.6rem;}
+      
+      /* تقليل حجم الأزرار الأساسية */
+      .btn, .action-btn{
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        gap: 10px;
+      }
+      .btn-preview{margin-top: 6px;}
+      
+      /* تقليل حجم عارض PDF */
+      #pdfContainer{
+        height: 50vh;          /* أقل من 68vh لتجربة أفضل */
+        min-height: 320px;
+      }
+      
+      /* تحسين أزرار التحكم */
+      .controls{
+        gap: 12px;
+        margin-top: 14px;
+      }
+      .controls .action-btn{
+        padding: 10px 18px;
+        font-size: 0.85rem;
+        flex: 0 1 auto;
+        width: auto;
+      }
+      
+      /* تقليل الهوامش والتباعد العام داخل المحتوى الرئيسي */
+      #mainContent{
+        padding: 16px;
+        border-radius: 36px;
+      }
+      .header, .file-info, .security-notice, .preview-notice{
+        padding: 12px 16px;
+      }
+      .security-notice, .preview-notice{
+        gap: 10px;
+        font-size: 0.85rem;
+      }
+      .file-badge{
+        padding: 4px 12px;
+        font-size: 0.75rem;
+      }
+      #currentFileName{
+        font-size: 1rem;
+      }
+      
+      /* زر الثيم أصغر قليلاً */
+      .theme-toggle{
+        top: 12px;
+        left: 12px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+      }
+      
+      /* تحسين حقل الإدخال */
+      #codeInput{
+        padding: 14px 50px 14px 18px;
+        font-size: 0.95rem;
+      }
+      .server-status{
+        padding: 10px 16px;
+        font-size: 0.8rem;
+        margin: 12px 0 18px;
+      }
     }
-    @media (max-width:480px){
-      .logo i{font-size:2rem}.logo-text{font-size:1.7rem}
+
+    /* للشاشات الصغيرة جدًا (عرض أقل من 480px) */
+    @media (max-width: 480px){
+      .file-btn{
+        min-width: 125px;
+        padding: 10px 6px;
+      }
+      .file-btn i{font-size: 1.4rem;}
+      .btn, .action-btn{
+        padding: 10px 14px;
+        font-size: 0.85rem;
+      }
+      .controls .action-btn{
+        padding: 8px 14px;
+        font-size: 0.8rem;
+      }
+      #pdfContainer{
+        height: 45vh;
+        min-height: 280px;
+      }
+      .logo i{font-size: 2rem}
+      .logo-text{font-size: 1.5rem}
+      .login-header h2{font-size: 1.5rem}
     }
   </style>
 </head>
