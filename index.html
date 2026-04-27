@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes,viewport-fit=cover" />
-  <title>ملخصات الصحيح - نظام العرض الآمن | تصميم عصري</title>
+  <title>ملخصات الصحيح - نظام العرض الآمن | تصميم فاتح عصري</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,36 +12,91 @@
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+    
     :root{
-      --bg1:#f8fafc;--bg2:#eef2ff;--card:rgba(255,255,255,.88);--glass:rgba(255,255,255,.7);
-      --text:#0f172a;--muted:#475569;--line:rgba(15,23,42,.08);--p1:#0ea5e9;--p2:#6366f1;--p3:#f43f5e;
-      --glow:rgba(14,165,233,.25);--shadow-sm:0 8px 20px -8px rgba(0,0,0,.12);
-      --shadow-lg:0 25px 45px -12px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.02);
-      --codebg:rgba(248,250,252,.98)
+      --bg1: linear-gradient(145deg, #f8fbff 0%, #eef5ff 100%);
+      --bg2: linear-gradient(125deg, #ffffff, #e9f0fe);
+      --card: rgba(255, 255, 255, 0.88);
+      --glass: rgba(255, 255, 255, 0.75);
+      --text: #0a2540;
+      --muted: #4a627a;
+      --line: rgba(0, 100, 200, 0.15);
+      --p1: #0066ff;
+      --p2: #8844ff;
+      --p3: #ff3366;
+      --glow: rgba(0, 102, 255, 0.25);
+      --shadow-sm: 0 8px 20px -8px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.02);
+      --codebg: #ffffff;
     }
+    
     body.dark{
-      --bg1:#030712;--bg2:#0f172a;--card:rgba(15,25,45,.85);--glass:rgba(10,20,35,.75);
-      --text:#eef2ff;--muted:#94a3b8;--line:rgba(148,163,184,.12);--p1:#38bdf8;--p2:#a78bfa;--p3:#fb7185;
-      --glow:rgba(56,189,248,.3);--shadow-sm:0 8px 20px -8px rgba(0,0,0,.5);
-      --shadow-lg:0 25px 45px -12px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.03);--codebg:rgba(5,10,25,.95)
+      --bg1: linear-gradient(135deg, #030612 0%, #0a1030 100%);
+      --bg2: linear-gradient(115deg, #04081f, #0e153a);
+      --card: rgba(10, 15, 35, 0.85);
+      --glass: rgba(18, 25, 55, 0.7);
+      --text: #eef2ff;
+      --muted: #a6b0e6;
+      --line: rgba(60, 100, 220, 0.4);
+      --p1: #1effff;
+      --p2: #c47eff;
+      --p3: #ff547c;
+      --glow: rgba(30, 255, 255, 0.4);
+      --shadow-lg: 0 25px 45px -12px rgba(30, 255, 255, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      --codebg: rgba(5, 8, 22, 0.95);
     }
+    
     body{
       font-family:'Tajawal',sans-serif;color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;
-      padding:24px;overflow-x:hidden;background:
-      radial-gradient(circle at 20% 30%,rgba(14,165,233,.1),transparent 45%),
-      radial-gradient(circle at 85% 70%,rgba(99,102,241,.12),transparent 50%),
-      linear-gradient(135deg,var(--bg1),var(--bg2));
+      padding:24px;overflow-x:hidden;
+      background: radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.08), transparent 55%),
+                  radial-gradient(circle at 90% 80%, rgba(136, 68, 255, 0.08), transparent 60%),
+                  var(--bg1);
       background-attachment:fixed;transition:.3s;position:relative
     }
     body::before{
-      content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(rgba(148,163,184,.25) 1.2px,transparent 1.2px);
-      background-size:42px 42px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),rgba(0,0,0,.1));animation:slowDrift 45s linear infinite
+      content:"";position:fixed;inset:0;pointer-events:none;
+      background-image: radial-gradient(rgba(0, 102, 255, 0.12) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0));
+      animation: slowDrift 45s linear infinite;
     }
-    body.dark::before{background-image:radial-gradient(rgba(148,163,184,.12) 1px,transparent 1px);opacity:.7}
+    body.dark::before{
+      background-image: radial-gradient(rgba(30, 255, 255, 0.1) 1px, transparent 1px);
+      opacity:0.6;
+    }
     @keyframes slowDrift{0%{background-position:0 0}100%{background-position:120px 120px}}
     @keyframes floatIn{0%{opacity:0;transform:scale(.96) translateY(18px)}100%{opacity:1;transform:scale(1) translateY(0)}}
-    @keyframes fadeSlide{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
     @keyframes spin{to{transform:rotate(360deg)}}
+    
+    @keyframes fastRedGlow {
+      0% { text-shadow: 0 0 2px #ff3366, 0 0 4px #ff1a4f; opacity: 0.9; }
+      100% { text-shadow: 0 0 8px #ff6699, 0 0 12px #ff3366, 0 0 18px #cc0044; opacity: 1; }
+    }
+
+    .warning-glow {
+      background: rgba(255, 51, 102, 0.12);
+      backdrop-filter: blur(8px);
+      border-radius: 32px;
+      padding: 14px 18px;
+      margin: 18px 0 12px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #b91c2c;
+      border: 1px solid rgba(255, 51, 102, 0.5);
+      box-shadow: 0 0 8px rgba(255, 51, 102, 0.3);
+      animation: fastRedGlow 0.35s infinite alternate;
+    }
+    body.dark .warning-glow {
+      background: rgba(255, 80, 120, 0.2);
+      color: #ffb3c6;
+      border-color: rgba(255, 80, 120, 0.6);
+      box-shadow: 0 0 15px rgba(255, 51, 102, 0.4);
+    }
+    .warning-glow i { margin-left: 8px; color: #ff3366; }
+    body.dark .warning-glow i { color: #ff7a9e; }
 
     .theme-toggle,.btn,.action-btn,.file-btn,.floating-exit-btn,.server-status,.security-notice,.preview-notice,.file-info,#loginBox,#mainContent,#pdfContainer,#codeInput{
       border:1px solid var(--line)
@@ -52,26 +107,27 @@
 
     .theme-toggle{
       position:fixed;top:22px;left:22px;z-index:9999;width:52px;height:52px;border-radius:32px;display:grid;place-items:center;
-      background:var(--glass);backdrop-filter:blur(14px);box-shadow:var(--shadow-sm);color:var(--p1);font-size:1.55rem
+      background:var(--glass);backdrop-filter:blur(14px);box-shadow:var(--shadow-sm);color:var(--p1);
+      font-size:1.55rem;border:1px solid var(--p1);
     }
-    .theme-toggle:hover{transform:translateY(-3px) scale(1.05);color:var(--p3)}
+    .theme-toggle:hover{transform:translateY(-3px) scale(1.05);color:var(--p3);box-shadow:0 0 12px var(--p1);}
 
     #loginBox,#mainContent{
       width:100%;background:var(--card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-      box-shadow:var(--shadow-lg);animation:floatIn .6s cubic-bezier(.16,1,.3,1)
+      box-shadow:var(--shadow-lg);animation:floatIn .6s cubic-bezier(.16,1,.3,1);border:1px solid rgba(0,102,255,0.2);
     }
     #loginBox{
       max-width:580px;padding:38px 32px 42px;border-radius:48px;text-align:center
     }
-    #loginBox:hover{transform:translateY(-5px);box-shadow:0 35px 55px -15px rgba(0,0,0,.3),0 0 0 1px var(--p1)}
+    #loginBox:hover{transform:translateY(-5px);box-shadow:0 30px 45px -12px rgba(0,102,255,0.3),0 0 0 1px var(--p1);}
     #mainContent{
       max-width:1360px;border-radius:48px;padding:20px 24px
     }
 
     .logo{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px}
     .logo i{
-      font-size:2.8rem;filter:drop-shadow(0 8px 18px var(--glow));
-      background:linear-gradient(135deg,var(--p1),var(--p2));-webkit-background-clip:text;background-clip:text;color:transparent
+      font-size:2.8rem;filter:drop-shadow(0 0 10px var(--glow));
+      background:linear-gradient(135deg,var(--p1),var(--p2),var(--p3));-webkit-background-clip:text;background-clip:text;color:transparent
     }
     .logo-text,.login-header h2{
       background:linear-gradient(125deg,var(--p1),var(--p2),var(--p3));-webkit-background-clip:text;background-clip:text;color:transparent
@@ -82,27 +138,30 @@
 
     .server-status{
       width:100%;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:60px;padding:12px 20px;
-      margin:18px 0 22px;font-weight:800;font-size:.9rem;background:var(--glass);backdrop-filter:blur(8px)
+      margin:18px 0 22px;font-weight:800;font-size:.9rem;background:var(--glass);backdrop-filter:blur(8px);
     }
-    .status-connected{color:#10b981;background:rgba(16,185,129,.12)}
-    .status-failed{color:#fb7185;background:rgba(251,113,133,.1)}
-    .status-loading{color:var(--p1);background:rgba(6,182,212,.1)}
+    .status-connected{color:#00875A;background:rgba(0,135,90,0.1); border-color:#00875A;}
+    .status-failed{color:#dc2626;background:rgba(220,38,38,0.08); border-color:#dc2626;}
+    .status-loading{color:var(--p1);background:rgba(0,102,255,0.1); border-color:var(--p1);}
+    body.dark .status-connected{color:#2effb0; background:rgba(46,255,176,0.12);}
+    body.dark .status-failed{color:#ff7795; background:rgba(255,119,149,0.1);}
 
     .input-group{position:relative;margin:28px 0 22px}
     #codeInput{
       width:100%;padding:18px 55px 18px 22px;border-radius:60px;outline:none;background:var(--codebg);color:var(--text);
-      text-align:center;font-size:1.05rem;font-weight:600;letter-spacing:.5px;font-family:'Tajawal',monospace
+      text-align:center;font-size:1.05rem;font-weight:600;letter-spacing:.5px;font-family:'Tajawal',monospace;
+      border:1px solid var(--p1); transition: all 0.2s;
     }
-    #codeInput:focus{border-color:var(--p1);box-shadow:0 0 0 4px var(--glow);transform:scale(1.01)}
-    .input-icon{position:absolute;inset-inline-start:20px;top:50%;transform:translateY(-50%);color:var(--p1);font-size:1.25rem;opacity:.8}
+    #codeInput:focus{border-color:var(--p2);box-shadow:0 0 0 4px var(--glow), 0 0 12px var(--p1);transform:scale(1.01)}
+    .input-icon{position:absolute;inset-inline-start:20px;top:50%;transform:translateY(-50%);color:var(--p1);font-size:1.25rem;opacity:.8;}
 
     .btn,.action-btn{
       width:100%;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:none;border-radius:50px;
-      color:#fff;background:linear-gradient(105deg,var(--p1),var(--p2));box-shadow:0 12px 24px -8px var(--glow);
-      font-weight:800;padding:15px 20px;font-size:1rem
+      color:#fff;background:linear-gradient(105deg, var(--p1), var(--p2));box-shadow:0 8px 20px -2px var(--glow);
+      font-weight:800;padding:15px 20px;font-size:1rem; transition:0.2s;
     }
-    .btn-preview{margin-top:8px;background:linear-gradient(105deg,#f59e0b,#f97316);box-shadow:0 12px 24px -8px rgba(249,115,22,.25)}
-    .btn:hover,.action-btn:hover,.file-btn:hover,.theme-toggle:hover{transform:translateY(-3px) scale(1.01);filter:brightness(1.02)}
+    .btn-preview{margin-top:8px;background:linear-gradient(105deg, #ff7b2c, var(--p3)); box-shadow:0 0 12px rgba(255,51,102,0.3);}
+    .btn:hover,.action-btn:hover,.file-btn:hover,.theme-toggle:hover{transform:translateY(-3px) scale(1.02);filter:brightness(1.05); box-shadow:0 0 20px var(--p1);}
 
     .spinner{width:44px;height:44px;border:4px solid var(--line);border-top-color:var(--p1);border-radius:50%;animation:spin .8s linear infinite}
     #msg{margin-top:16px;font-weight:700;border-radius:60px}
@@ -110,148 +169,69 @@
     .progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--p1),var(--p2));transition:.25s}
 
     .header,.file-info,.security-notice,.preview-notice{
-      border-radius:28px;background:var(--glass);backdrop-filter:blur(8px);padding:14px 20px
+      border-radius:28px;background:var(--glass);backdrop-filter:blur(8px);padding:14px 20px; border:1px solid rgba(0,102,255,0.2);
     }
-    .header{border-radius:36px}
+    .header{border-radius:36px; background: linear-gradient(110deg, rgba(0,102,255,0.08), rgba(136,68,255,0.08));}
     .security-notice,.preview-notice{margin-bottom:20px;display:flex;align-items:center;gap:14px;line-height:1.6}
     .files-buttons{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
     .file-btn{
       background:var(--glass);border-radius:32px;padding:18px 10px;color:var(--text);display:flex;flex-direction:column;align-items:center;gap:12px;
-      text-align:center;backdrop-filter:blur(4px);font-weight:800
+      text-align:center;backdrop-filter:blur(4px);font-weight:800; border:1px solid var(--line); transition:0.2s;
     }
-    .file-btn i{font-size:2rem;color:var(--p1)}
-    .file-btn.active{background:linear-gradient(110deg,var(--p1),var(--p2));color:#fff;border-color:transparent;box-shadow:0 14px 28px var(--glow)}
-    .file-btn.active i{color:#fff}
-    .action-btn-outline{background:var(--glass);color:var(--text);box-shadow:none}
-    .action-btn-outline:hover{background:var(--card);border-color:var(--p1);color:var(--p1)}
-    .file-badge{background:linear-gradient(110deg,var(--p1),var(--p2));box-shadow:0 5px 12px var(--glow);border-radius:60px;padding:6px 14px;color:#fff}
-    #pdfContainer{border-radius:36px;overflow:hidden;height:min(68vh,620px);background:var(--glass)}
+    .file-btn i{font-size:2rem;color:var(--p1);}
+    .file-btn.active{background:linear-gradient(110deg, var(--p1), var(--p2));color:#fff;border-color:transparent;box-shadow:0 0 20px var(--p1);}
+    .file-btn.active i{color:#fff;}
+    .action-btn-outline{background:var(--glass);color:var(--text);box-shadow:none;border:1px solid var(--p1);}
+    .action-btn-outline:hover{background:var(--p1);color:#fff;border-color:var(--p1);box-shadow:0 0 15px var(--p1);}
+    .file-badge{background:linear-gradient(110deg, var(--p1), var(--p2));box-shadow:0 0 8px var(--glow);border-radius:60px;padding:6px 14px;color:#fff;}
+    #pdfContainer{border-radius:36px;overflow:hidden;height:min(68vh,620px);background:var(--glass);border:1px solid var(--p1);}
     #pdfViewer{width:100%;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
     .controls{display:flex;gap:16px;justify-content:center;margin-top:16px;flex-wrap:wrap}
     .fullscreen-overlay{
-      position:fixed;inset:0;display:none;z-index:9998;background:#000000dd;backdrop-filter:blur(12px)
+      position:fixed;inset:0;display:none;z-index:9998;background:#000000cc;backdrop-filter:blur(12px)
     }
     .fullscreen-container,.fullscreen-container iframe{width:100%;height:100%}
     .fullscreen-container iframe{background:#111;border:0}
     .floating-exit-btn{
       position:fixed;top:18px;inset-inline-end:18px;z-index:10000;width:48px;height:48px;border-radius:50%;border:none;
-      background:rgba(20,20,40,.85);backdrop-filter:blur(16px);color:#fff;font-size:1.2rem;opacity:0;pointer-events:none
+      background:rgba(0,0,0,0.7);backdrop-filter:blur(16px);color:#ff3366;font-size:1.2rem;opacity:0;pointer-events:none;
+      border:1px solid var(--p3);
     }
     .floating-exit-btn.visible{opacity:1;pointer-events:auto}
     .shake{animation:shake .4s}
     @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(6px)}50%{transform:translateX(-6px)}75%{transform:translateX(4px)}}
 
-    /* ========== تحسينات الهواتف ========== */
     @media (max-width: 680px){
       body{padding:16px}
       #loginBox{padding:28px 20px 34px;border-radius:38px}
-      
-      /* جعل أزرار الملفات تمرير أفقي مع تقليل حجم الزر */
-      .files-buttons{
-        display: flex;
-        overflow-x: auto;
-        gap: 14px;
-        padding-bottom: 12px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-      }
-      .file-btn{
-        min-width: 140px;      /* عرض مناسب للهواتف */
-        padding: 12px 8px;
-        font-size: 0.85rem;
-        scroll-snap-align: start;
-      }
+      .files-buttons{display: flex; overflow-x: auto; gap: 14px; padding-bottom: 12px; scroll-snap-type: x mandatory;}
+      .file-btn{ min-width: 140px; padding: 12px 8px; font-size: 0.85rem; scroll-snap-align: start; }
       .file-btn i{font-size: 1.6rem;}
-      
-      /* تقليل حجم الأزرار الأساسية */
-      .btn, .action-btn{
-        padding: 12px 16px;
-        font-size: 0.9rem;
-        gap: 10px;
-      }
+      .btn, .action-btn{ padding: 12px 16px; font-size: 0.9rem; gap: 10px; }
       .btn-preview{margin-top: 6px;}
-      
-      /* تقليل حجم عارض PDF */
-      #pdfContainer{
-        height: 50vh;          /* أقل من 68vh لتجربة أفضل */
-        min-height: 320px;
-      }
-      
-      /* تحسين أزرار التحكم */
-      .controls{
-        gap: 12px;
-        margin-top: 14px;
-      }
-      .controls .action-btn{
-        padding: 10px 18px;
-        font-size: 0.85rem;
-        flex: 0 1 auto;
-        width: auto;
-      }
-      
-      /* تقليل الهوامش والتباعد العام داخل المحتوى الرئيسي */
-      #mainContent{
-        padding: 16px;
-        border-radius: 36px;
-      }
-      .header, .file-info, .security-notice, .preview-notice{
-        padding: 12px 16px;
-      }
-      .security-notice, .preview-notice{
-        gap: 10px;
-        font-size: 0.85rem;
-      }
-      .file-badge{
-        padding: 4px 12px;
-        font-size: 0.75rem;
-      }
-      #currentFileName{
-        font-size: 1rem;
-      }
-      
-      /* زر الثيم أصغر قليلاً */
-      .theme-toggle{
-        top: 12px;
-        left: 12px;
-        width: 44px;
-        height: 44px;
-        font-size: 1.3rem;
-      }
-      
-      /* تحسين حقل الإدخال */
-      #codeInput{
-        padding: 14px 50px 14px 18px;
-        font-size: 0.95rem;
-      }
-      .server-status{
-        padding: 10px 16px;
-        font-size: 0.8rem;
-        margin: 12px 0 18px;
-      }
+      #pdfContainer{ height: 50vh; min-height: 320px; }
+      .controls{ gap: 12px; margin-top: 14px; }
+      .controls .action-btn{ padding: 10px 18px; font-size: 0.85rem; width: auto; }
+      #mainContent{ padding: 16px; border-radius: 36px; }
+      .header, .file-info, .security-notice, .preview-notice{ padding: 12px 16px; }
+      .security-notice, .preview-notice{ gap: 10px; font-size: 0.85rem; }
+      .file-badge{ padding: 4px 12px; font-size: 0.75rem; }
+      #currentFileName{ font-size: 1rem; }
+      .theme-toggle{ top: 12px; left: 12px; width: 44px; height: 44px; font-size: 1.3rem; }
+      #codeInput{ padding: 14px 50px 14px 18px; font-size: 0.95rem; }
+      .server-status{ padding: 10px 16px; font-size: 0.8rem; margin: 12px 0 18px; }
+      .warning-glow{ font-size: 0.85rem; padding: 12px 14px; }
     }
-
-    /* للشاشات الصغيرة جدًا (عرض أقل من 480px) */
     @media (max-width: 480px){
-      .file-btn{
-        min-width: 125px;
-        padding: 10px 6px;
-      }
-      .file-btn i{font-size: 1.4rem;}
-      .btn, .action-btn{
-        padding: 10px 14px;
-        font-size: 0.85rem;
-      }
-      .controls .action-btn{
-        padding: 8px 14px;
-        font-size: 0.8rem;
-      }
-      #pdfContainer{
-        height: 45vh;
-        min-height: 280px;
-      }
-      .logo i{font-size: 2rem}
-      .logo-text{font-size: 1.5rem}
-      .login-header h2{font-size: 1.5rem}
+      .file-btn{ min-width: 125px; padding: 10px 6px; }
+      .file-btn i{ font-size: 1.4rem; }
+      .btn, .action-btn{ padding: 10px 14px; font-size: 0.85rem; }
+      .controls .action-btn{ padding: 8px 14px; font-size: 0.8rem; }
+      #pdfContainer{ height: 45vh; min-height: 280px; }
+      .logo i{ font-size: 2rem; }
+      .logo-text{ font-size: 1.5rem; }
+      .login-header h2{ font-size: 1.5rem; }
+      .warning-glow{ font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -269,6 +249,14 @@
     </div>
 
     <div id="serverStatus" class="server-status status-loading"><i class="fas fa-sync-alt fa-spin"></i> جاري الاتصال بالسيرفر...</div>
+
+    <div class="warning-glow">
+      <i class="fas fa-exclamation-triangle"></i>
+      <div>
+        ⚠️ سيتم إغلاق خادم الموقع في <strong>1/7/2026</strong><br>
+        إذا كان لديك مواد دراسية بعد هذا التاريخ تواصل معنا على <strong dir="ltr" style="display: inline-block;">01553307846</strong>
+      </div>
+    </div>
 
     <div class="input-group">
       <input id="codeInput" type="text" placeholder="مثال: X7G9-12AB" autocomplete="off" maxlength="20" />
@@ -295,7 +283,7 @@
     <div id="filesSection">
       <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:18px;">
         <h3><i class="fas fa-folder-open"></i> الملفات المتاحة</h3>
-        <div id="filesCount" style="background:var(--glass);border-radius:40px;padding:6px 18px;">0 ملف</div>
+        <div id="filesCount" style="background:var(--glass);border-radius:40px;padding:6px 18px; border:1px solid var(--p1);">0 ملف</div>
       </div>
       <div id="filesButtons" class="files-buttons"></div>
     </div>
@@ -316,7 +304,7 @@
     <div id="pdfContainer">
       <div id="pdfViewer">
         <div>
-          <i class="fas fa-file-pdf" style="font-size:4rem;margin-bottom:14px;color:var(--p1)"></i>
+          <i class="fas fa-file-pdf" style="font-size:4rem;margin-bottom:14px;color:var(--p1);"></i>
           <h3 style="font-size:1.35rem;">لم يتم تحميل أي ملف بعد</h3>
           <p>اختر ملفاً من القائمة أعلاه لعرضه هنا</p>
         </div>
@@ -335,200 +323,249 @@
   </div>
 
   <script>
-    const WEB_APP_URL="https://script.google.com/macros/s/AKfycbxEAM95n8OovOcA3QqHCRJQ9ELrrl4Q3NaedKIvVTPf4SZnitgrVErmR_4N8Cw9wNBUbQ/exec",
-      $=id=>document.getElementById(id), q=s=>document.querySelector(s);
+    const WEB_APP_URL="https://script.google.com/macros/s/AKfycbxEAM95n8OovOcA3QqHCRJQ9ELrrl4Q3NaedKIvVTPf4SZnitgrVErmR_4N8Cw9wNBUbQ/exec";
+    const $ = id => document.getElementById(id);
+    const q = s => document.querySelector(s);
 
-    let currentFiles=[], currentDisplayFileId=null, fullscreenActive=false, hideTimeout=null;
-    const overlay=$("fullscreenOverlay"), fsIframe=$("fullscreenViewer"), exitBtn=$("floatingExitBtn"),
-          themeBtn=$("themeToggleBtn"), themeIcon=themeBtn.querySelector("i");
+    let currentFiles = [];
+    let currentDisplayFileId = null;
+    let fullscreenActive = false;
+    let hideTimeout = null;
 
-    const setTheme=t=>{
-      const dark=t==="dark";
-      document.body.classList.toggle("dark",dark);
-      themeIcon.className=dark?"fas fa-sun":"fas fa-moon";
-      localStorage.setItem("theme",dark?"dark":"light");
+    const overlay = $("fullscreenOverlay");
+    const fsIframe = $("fullscreenViewer");
+    const exitBtn = $("floatingExitBtn");
+    const themeBtn = $("themeToggleBtn");
+    const themeIcon = themeBtn.querySelector("i");
+
+    const setTheme = t => {
+      const dark = t === "dark";
+      document.body.classList.toggle("dark", dark);
+      themeIcon.className = dark ? "fas fa-sun" : "fas fa-moon";
+      localStorage.setItem("theme", dark ? "dark" : "light");
     };
-    const loadStoredTheme=()=>{
-      const t=localStorage.getItem("theme");
-      setTheme(t==="dark"||t==="light" ? t : (matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
+
+    const loadStoredTheme = () => {
+      const t = localStorage.getItem("theme");
+      setTheme(t === "dark" || t === "light" ? t : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
     };
-    themeBtn.onclick=()=>setTheme(document.body.classList.contains("dark")?"light":"dark");
+    themeBtn.onclick = () => setTheme(document.body.classList.contains("dark") ? "light" : "dark");
     loadStoredTheme();
 
-    const getDriveEmbedUrl=id=>`https://drive.google.com/file/d/${id}/preview`;
-    const getDeviceFingerprint=()=>{
-      const s=navigator.userAgent+navigator.platform+screen.width+screen.height; let h=0;
-      for(let i=0;i<s.length;i++) h=((h<<5)-h)+s.charCodeAt(i), h|=0;
+    const getDriveEmbedUrl = id => `https://drive.google.com/file/d/${id}/preview`;
+
+    const getDeviceFingerprint = () => {
+      const s = navigator.userAgent + navigator.platform + screen.width + screen.height;
+      let h = 0;
+      for (let i = 0; i < s.length; i++) h = ((h << 5) - h) + s.charCodeAt(i), h |= 0;
       return Math.abs(h).toString();
     };
 
-    const setStatus=(ok,loading=false)=>{
-      const html=loading?`<i class="fas fa-sync-alt fa-spin"></i> جاري الاتصال بالسيرفر...`:
-        ok?`<i class="fas fa-check-circle"></i> متصل بالخادم`:`<i class="fas fa-exclamation-triangle"></i> فشل الاتصال بالخادم`;
-      const cls=loading?"status-loading":ok?"status-connected":"status-failed";
-      ["serverStatus","serverStatusMain"].forEach(id=>{ const el=$(id); if(el){ el.className=`server-status ${cls}`; el.innerHTML=html; }});
+    const setStatus = (ok, loading = false) => {
+      const html = loading ? `<i class="fas fa-sync-alt fa-spin"></i> جاري الاتصال بالسيرفر...` :
+        ok ? `<i class="fas fa-check-circle"></i> متصل بالخادم` : `<i class="fas fa-exclamation-triangle"></i> فشل الاتصال بالخادم`;
+      const cls = loading ? "status-loading" : ok ? "status-connected" : "status-failed";
+      ["serverStatus", "serverStatusMain"].forEach(id => {
+        const el = $(id);
+        if (el) { el.className = `server-status ${cls}`; el.innerHTML = html; }
+      });
     };
 
-    async function checkServerConnection(){
-      setStatus(false,true);
-      try{
-        const c=new AbortController(), t=setTimeout(()=>c.abort(),10000), fd=new FormData();
-        fd.append("check","1");
-        const res=await fetch(WEB_APP_URL,{method:"POST",body:fd,signal:c.signal});
-        clearTimeout(t); JSON.parse(await res.text()); setStatus(true);
-      }catch(e){ console.warn(e); setStatus(false); }
+    async function checkServerConnection() {
+      setStatus(false, true);
+      try {
+        const c = new AbortController();
+        const t = setTimeout(() => c.abort(), 10000);
+        const fd = new FormData();
+        fd.append("check", "1");
+        const res = await fetch(WEB_APP_URL, { method: "POST", body: fd, signal: c.signal });
+        clearTimeout(t);
+        JSON.parse(await res.text());
+        setStatus(true);
+      } catch (e) { console.warn(e); setStatus(false); }
     }
 
-    function showMessage(text,isError=false){
-      const msg=$("msg");
-      msg.textContent=text;
-      msg.style.cssText=`margin-top:16px;padding:10px 20px;border-radius:60px;display:inline-block;
-        background:${isError?"rgba(251,113,133,.15)":"rgba(16,185,129,.12)"};
-        color:${isError?"#fb7185":"#34d399"};
-        border:1px solid ${isError?"rgba(251,113,133,.3)":"rgba(16,185,129,.3)"};font-weight:800;`;
-      if(isError){ $("codeInput").classList.add("shake"); setTimeout(()=>$("codeInput").classList.remove("shake"),500); }
-      setTimeout(()=>{ msg.textContent=""; msg.style.cssText=""; },4000);
+    function showMessage(text, isError = false) {
+      const msg = $("msg");
+      msg.textContent = text;
+      msg.style.cssText = `margin-top:16px;padding:10px 20px;border-radius:60px;display:inline-block;
+        background:${isError ? "rgba(255,51,102,0.15)" : "rgba(0,135,90,0.1)"};
+        color:${isError ? "#dc2626" : "#00875A"};
+        border:1px solid ${isError ? "#ff3366" : "#00875A"};font-weight:800;`;
+      if (isError) { $("codeInput").classList.add("shake"); setTimeout(() => $("codeInput").classList.remove("shake"), 500); }
+      setTimeout(() => { msg.textContent = ""; msg.style.cssText = ""; }, 4000);
     }
 
-    const updateProgressBar=p=>{
-      const bar=q(".progress-bar"), fill=q(".progress-fill");
-      if(bar&&fill){ bar.style.display=p>0?"block":"none"; fill.style.width=p>0?p+"%":"0%"; }
+    const updateProgressBar = p => {
+      const bar = q(".progress-bar");
+      const fill = q(".progress-fill");
+      if (bar && fill) { bar.style.display = p > 0 ? "block" : "none"; fill.style.width = p > 0 ? p + "%" : "0%"; }
     };
 
-    function displayPDF(fileId,fileName="ملف PDF",description="لا يوجد وصف للملف"){
-      if(!fileId) return;
-      currentDisplayFileId=fileId;
-      $("currentFileName").innerHTML=`<i class="fas fa-file-pdf"></i> ${fileName}`;
-      $("currentFileDescription").textContent=description;
-      $("fileInfo").style.display="block";
+    function displayPDF(fileId, fileName = "ملف PDF", description = "لا يوجد وصف للملف") {
+      if (!fileId) return;
+      currentDisplayFileId = fileId;
+      $("currentFileName").innerHTML = `<i class="fas fa-file-pdf"></i> ${fileName}`;
+      $("currentFileDescription").textContent = description;
+      $("fileInfo").style.display = "block";
 
-      const viewer=$("pdfViewer");
-      viewer.innerHTML=`<div style="padding:40px;text-align:center"><div class="spinner"></div><h3 style="color:var(--p1)">جاري تحميل الملف...</h3></div>`;
+      const viewer = $("pdfViewer");
+      viewer.innerHTML = `<div style="padding:40px;text-align:center"><div class="spinner"></div><h3 style="color:var(--p1)">جاري تحميل الملف...</h3></div>`;
 
-      const iframe=document.createElement("iframe");
-      iframe.style.cssText="width:100%;height:100%;border:none;border-radius:28px;";
-      iframe.allowFullscreen=true;
-      iframe.style.touchAction="pinch-zoom";
-      iframe.src=getDriveEmbedUrl(fileId);
-      setTimeout(()=>{ viewer.innerHTML=""; viewer.appendChild(iframe); },180);
+      const iframe = document.createElement("iframe");
+      iframe.style.cssText = "width:100%;height:100%;border:none;border-radius:28px;";
+      iframe.allowFullscreen = true;
+      iframe.style.touchAction = "pinch-zoom";
+      iframe.src = getDriveEmbedUrl(fileId);
+      setTimeout(() => { viewer.innerHTML = ""; viewer.appendChild(iframe); }, 180);
     }
 
-    function showFile(i){
-      if(i<0||i>=currentFiles.length) return;
-      document.querySelectorAll(".file-btn").forEach((b,idx)=>b.classList.toggle("active",idx===i));
-      const f=currentFiles[i];
-      displayPDF(f.id,f.name||`الملف ${i+1}`,f.description||"لا يوجد وصف للملف");
+    function showFile(i) {
+      if (i < 0 || i >= currentFiles.length) return;
+      document.querySelectorAll(".file-btn").forEach((b, idx) => b.classList.toggle("active", idx === i));
+      const f = currentFiles[i];
+      displayPDF(f.id, f.name || `الملف ${i + 1}`, f.description || "لا يوجد وصف للملف");
     }
 
-    function createFileButtons(){
-      const wrap=$("filesButtons"); wrap.innerHTML="";
-      currentFiles.forEach((f,i)=>{
-        const btn=document.createElement("button");
-        btn.className="file-btn"+(i===0?" active":"");
-        btn.innerHTML=`<i class="fas fa-file-pdf"></i><div>${f.name||`الملف ${i+1}`}</div>`;
-        btn.onclick=()=>showFile(i);
+    function createFileButtons() {
+      const wrap = $("filesButtons");
+      wrap.innerHTML = "";
+      currentFiles.forEach((f, i) => {
+        const btn = document.createElement("button");
+        btn.className = "file-btn" + (i === 0 ? " active" : "");
+        btn.innerHTML = `<i class="fas fa-file-pdf"></i><div>${f.name || `الملف ${i + 1}`}</div>`;
+        btn.onclick = () => showFile(i);
         wrap.appendChild(btn);
       });
-      $("filesCount").textContent=`${currentFiles.length} ملف`;
+      $("filesCount").textContent = `${currentFiles.length} ملف`;
     }
 
-    function previewWithoutLogin(){
-      $("loginBox").style.display="none";
-      $("mainContent").style.display="block";
-      $("filesSection").style.display="none";
-      $("previewNotice").style.display="flex";
-      displayPDF("173VBPNrH9At_JYXtOLB1ZHXuoGsn_Q1f","معاينة تجريبية - ملف PDF","هذا ملف معاينة تجريبي باستخدام العارض الكامل. يرجى إدخال كود التسجيل.");
+    function previewWithoutLogin() {
+      $("loginBox").style.display = "none";
+      $("mainContent").style.display = "block";
+      $("filesSection").style.display = "none";
+      $("previewNotice").style.display = "flex";
+      displayPDF("173VBPNrH9At_JYXtOLB1ZHXuoGsn_Q1f", "معاينة تجريبية - ملف PDF", "هذا ملف معاينة تجريبي باستخدام العارض الكامل. يرجى إدخال كود التسجيل.");
       checkServerConnection();
     }
 
-    function checkCode(){
-      const code=$("codeInput").value.trim();
-      if(!code) return showMessage("❗ الرجاء إدخال الكود",true);
+    function checkCode() {
+      const code = $("codeInput").value.trim();
+      if (!code) return showMessage("❗ الرجاء إدخال الكود", true);
 
-      $("loading").style.display="block"; updateProgressBar(30);
-      const fd=new FormData();
-      fd.append("code",code); fd.append("deviceId",getDeviceFingerprint());
+      $("loading").style.display = "block";
+      updateProgressBar(30);
+      const fd = new FormData();
+      fd.append("code", code);
+      fd.append("deviceId", getDeviceFingerprint());
 
-      fetch(WEB_APP_URL,{method:"POST",body:fd})
-        .then(r=>r.json())
-        .then(result=>{
-          $("loading").style.display="none"; updateProgressBar(100); setTimeout(()=>updateProgressBar(0),500);
+      fetch(WEB_APP_URL, { method: "POST", body: fd })
+        .then(r => r.json())
+        .then(result => {
+          $("loading").style.display = "none";
+          updateProgressBar(100);
+          setTimeout(() => updateProgressBar(0), 500);
 
-          if(result.status==="ok"){
-            currentFiles=result.pdfFiles||[];
-            if(!currentFiles.length) return showMessage("❌ لا توجد ملفات مرتبطة بهذا الكود",true);
-            $("loginBox").style.display="none"; $("mainContent").style.display="block"; $("filesSection").style.display="block"; $("previewNotice").style.display="none";
-            createFileButtons(); showFile(0);
-          }else if(result.status==="other_device") showMessage("❌ الكود مستخدم على جهاز آخر",true);
-          else if(result.status==="invalid") showMessage("❌ كود غير صحيح",true);
-          else showMessage("⚠️ حدث خطأ غير متوقع",true);
+          if (result.status === "ok") {
+            currentFiles = result.pdfFiles || [];
+            if (!currentFiles.length) return showMessage("❌ لا توجد ملفات مرتبطة بهذا الكود", true);
+            $("loginBox").style.display = "none";
+            $("mainContent").style.display = "block";
+            $("filesSection").style.display = "block";
+            $("previewNotice").style.display = "none";
+            createFileButtons();
+            showFile(0);
+          } else if (result.status === "other_device") showMessage("❌ الكود مستخدم على جهاز آخر", true);
+          else if (result.status === "invalid") showMessage("❌ كود غير صحيح", true);
+          else showMessage("⚠️ حدث خطأ غير متوقع", true);
         })
-        .catch(err=>{
-          $("loading").style.display="none"; updateProgressBar(0);
-          showMessage("⚠️ فشل الاتصال بالخادم",true); console.error(err);
+        .catch(err => {
+          $("loading").style.display = "none";
+          updateProgressBar(0);
+          showMessage("⚠️ فشل الاتصال بالخادم", true);
+          console.error(err);
         });
     }
 
-    function showFloatingButtonTemporarily(){
-      if(!fullscreenActive) return;
+    function showFloatingButtonTemporarily() {
+      if (!fullscreenActive) return;
       exitBtn.classList.add("visible");
       clearTimeout(hideTimeout);
-      hideTimeout=setTimeout(()=>exitBtn.classList.remove("visible"),2800);
-    }
-    function onFullscreenChange(){
-      const fs=document.fullscreenElement||document.webkitFullscreenElement;
-      if(!fs&&fullscreenActive) exitFullscreenMode();
-    }
-    function setupFullscreenEvents(){
-      overlay.addEventListener("touchstart",showFloatingButtonTemporarily);
-      overlay.addEventListener("mousemove",showFloatingButtonTemporarily);
-      document.addEventListener("fullscreenchange",onFullscreenChange);
-      document.addEventListener("webkitfullscreenchange",onFullscreenChange);
-      exitBtn.onclick=exitFullscreenMode;
+      hideTimeout = setTimeout(() => exitBtn.classList.remove("visible"), 2800);
     }
 
-    async function openFullscreen(){
-      if(!currentDisplayFileId) return showMessage("لا يوجد ملف لعرضه",true);
-      fsIframe.src=getDriveEmbedUrl(currentDisplayFileId);
-      overlay.style.display="block"; document.body.style.overflow="hidden";
-      try{
-        if(overlay.requestFullscreen) await overlay.requestFullscreen();
-        else if(overlay.webkitRequestFullscreen) await overlay.webkitRequestFullscreen();
-      }catch(e){ console.warn(e); }
-      fullscreenActive=true; showFloatingButtonTemporarily();
-      document.addEventListener("keydown",fullscreenEscapeHandler);
-    }
-    function fullscreenEscapeHandler(e){ if(e.key==="Escape"&&fullscreenActive) exitFullscreenMode(); }
-
-    function exitFullscreenMode(){
-      if(document.exitFullscreen) document.exitFullscreen();
-      else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
-      overlay.style.display="none"; document.body.style.overflow="auto"; fsIframe.src="";
-      fullscreenActive=false; exitBtn.classList.remove("visible"); clearTimeout(hideTimeout);
-      document.removeEventListener("keydown",fullscreenEscapeHandler);
+    function onFullscreenChange() {
+      const fs = document.fullscreenElement || document.webkitFullscreenElement;
+      if (!fs && fullscreenActive) exitFullscreenMode();
     }
 
-    function goBackToLogin(){
-      if(fullscreenActive) exitFullscreenMode();
-      currentFiles=[]; currentDisplayFileId=null;
-      $("mainContent").style.display="none"; $("loginBox").style.display="block"; $("codeInput").value="";
-      $("msg").textContent=""; $("filesButtons").innerHTML=""; $("fileInfo").style.display="none"; $("filesCount").textContent="0 ملف";
-      $("filesSection").style.display="block"; $("previewNotice").style.display="none";
-      $("pdfViewer").innerHTML=`<div><i class="fas fa-file-pdf" style="font-size:4rem;margin-bottom:14px;color:var(--p1)"></i><h3 style="font-size:1.35rem;">لم يتم تحميل أي ملف بعد</h3><p>اختر ملفاً من القائمة أعلاه لعرضه هنا</p></div>`;
+    function setupFullscreenEvents() {
+      overlay.addEventListener("touchstart", showFloatingButtonTemporarily);
+      overlay.addEventListener("mousemove", showFloatingButtonTemporarily);
+      document.addEventListener("fullscreenchange", onFullscreenChange);
+      document.addEventListener("webkitfullscreenchange", onFullscreenChange);
+      exitBtn.onclick = exitFullscreenMode;
+    }
+
+    async function openFullscreen() {
+      if (!currentDisplayFileId) return showMessage("لا يوجد ملف لعرضه", true);
+      fsIframe.src = getDriveEmbedUrl(currentDisplayFileId);
+      overlay.style.display = "block";
+      document.body.style.overflow = "hidden";
+      try {
+        if (overlay.requestFullscreen) await overlay.requestFullscreen();
+        else if (overlay.webkitRequestFullscreen) await overlay.webkitRequestFullscreen();
+      } catch (e) { console.warn(e); }
+      fullscreenActive = true;
+      showFloatingButtonTemporarily();
+      document.addEventListener("keydown", fullscreenEscapeHandler);
+    }
+
+    function fullscreenEscapeHandler(e) { if (e.key === "Escape" && fullscreenActive) exitFullscreenMode(); }
+
+    function exitFullscreenMode() {
+      if (document.exitFullscreen) document.exitFullscreen();
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+      overlay.style.display = "none";
+      document.body.style.overflow = "auto";
+      fsIframe.src = "";
+      fullscreenActive = false;
+      exitBtn.classList.remove("visible");
+      clearTimeout(hideTimeout);
+      document.removeEventListener("keydown", fullscreenEscapeHandler);
+    }
+
+    function goBackToLogin() {
+      if (fullscreenActive) exitFullscreenMode();
+      currentFiles = [];
+      currentDisplayFileId = null;
+      $("mainContent").style.display = "none";
+      $("loginBox").style.display = "block";
+      $("codeInput").value = "";
+      $("msg").textContent = "";
+      $("filesButtons").innerHTML = "";
+      $("fileInfo").style.display = "none";
+      $("filesCount").textContent = "0 ملف";
+      $("filesSection").style.display = "block";
+      $("previewNotice").style.display = "none";
+      $("pdfViewer").innerHTML = `<div><i class="fas fa-file-pdf" style="font-size:4rem;margin-bottom:14px;color:var(--p1);"></i><h3 style="font-size:1.35rem;">لم يتم تحميل أي ملف بعد</h3><p>اختر ملفاً من القائمة أعلاه لعرضه هنا</p></div>`;
       checkServerConnection();
     }
 
-    document.addEventListener("DOMContentLoaded",()=>{
-      $("loginBox").style.display="block"; $("mainContent").style.display="none"; overlay.style.display="none";
+    document.addEventListener("DOMContentLoaded", () => {
+      $("loginBox").style.display = "block";
+      $("mainContent").style.display = "none";
+      overlay.style.display = "none";
       $("codeInput").focus();
-      $("codeInput").addEventListener("keypress",e=>{ if(e.key==="Enter") checkCode(); });
-      checkServerConnection(); setupFullscreenEvents();
+      $("codeInput").addEventListener("keypress", e => { if (e.key === "Enter") checkCode(); });
+      checkServerConnection();
+      setupFullscreenEvents();
     });
 
-    document.addEventListener("contextmenu",e=>{ e.preventDefault(); showMessage("❌ النقر الأيمن غير مسموح",true); return false; });
-    document.addEventListener("keydown",e=>{
-      if((e.ctrlKey||e.metaKey)&&(e.key==="s"||e.key==="p")){ e.preventDefault(); showMessage("❌ هذه الخاصية غير مسموحة",true); return false; }
-      if(e.key==="F12"){ e.preventDefault(); showMessage("❌ فتح أدوات المطورين غير مسموح",true); return false; }
+    document.addEventListener("contextmenu", e => { e.preventDefault(); showMessage("❌ النقر الأيمن غير مسموح", true); return false; });
+    document.addEventListener("keydown", e => {
+      if ((e.ctrlKey || e.metaKey) && (e.key === "s" || e.key === "p")) { e.preventDefault(); showMessage("❌ هذه الخاصية غير مسموحة", true); return false; }
+      if (e.key === "F12") { e.preventDefault(); showMessage("❌ فتح أدوات المطورين غير مسموح", true); return false; }
     });
   </script>
 </body>
