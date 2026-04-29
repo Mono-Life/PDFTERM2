@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes,viewport-fit=cover" />
-  <title>ملخصات الصحيح | النظام الآمن - تحسين التباين والثيمات</title>
+  <title>ملخصات الصحيح | نظام الامتحان التعيين 2026</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,132 +11,73 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
+    *{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
     :root{
-      --bg-light:radial-gradient(circle at 10% 20%, rgba(0,180,255,.12), rgba(0,255,200,.02) 70%),linear-gradient(125deg,#f0f5fe 0%,#e9f0fc 100%);
-      --bg-dark:radial-gradient(circle at 15% 25%, rgba(0,200,255,.15), rgba(20,30,70,.9) 80%),linear-gradient(115deg,#03061a,#0a1032);
-      --card-light:rgba(255,255,255,.85);
-      --card-dark:rgba(12,18,45,.85);
-      --border-light:rgba(0,0,0,.1);
-      --border-dark:rgba(80,140,255,.35);
-      --text-light:#0f1e3a;
-      --text-dark:#f0f3ff;
-      --accent:#2d6eff;
-      --accent2:#9d4eff;
-      --danger:#ff3366;
-      --danger-glow:rgba(255,51,102,.4);
+      --bg-light:radial-gradient(circle at 10% 20%,rgba(0,180,255,.12),rgba(0,255,200,.02) 70%),linear-gradient(125deg,#f0f5fe 0%,#e9f0fc 100%);
+      --bg-dark:radial-gradient(circle at 15% 25%,rgba(0,200,255,.15),rgba(20,30,70,.9) 80%),linear-gradient(115deg,#03061a,#0a1032);
+      --card-light:rgba(255,255,255,.85); --card-dark:rgba(12,18,45,.85);
+      --border-light:rgba(0,0,0,.1); --border-dark:rgba(80,140,255,.35);
+      --text-light:#0f1e3a; --text-dark:#f0f3ff;
+      --accent:#2d6eff; --accent2:#9d4eff; --danger:#ff3366; --danger-glow:rgba(255,51,102,.4);
       --shadow:0 20px 40px -15px rgba(0,0,0,.2),0 0 0 1px rgba(0,100,255,.1);
-      --input-light:rgba(245,248,255,.9);
-      --input-dark:rgba(5,10,30,.9);
-      --input-txt-light:#0a1c2f;
-      --input-txt-dark:#eef2ff;
-      --info-light:rgba(240,248,255,.8);
-      --info-dark:rgba(18,25,55,.8);
+      --input-light:rgba(245,248,255,.9); --input-dark:rgba(5,10,30,.9);
+      --input-txt-light:#0a1c2f; --input-txt-dark:#eef2ff;
+      --info-light:rgba(240,248,255,.8); --info-dark:rgba(18,25,55,.8);
     }
-
     body{
-      font-family:'Tajawal','Inter',sans-serif;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-      background-attachment:fixed;
-      transition:background .3s ease,color .2s;
-      position:relative;
+      font-family:'Tajawal','Inter',sans-serif; min-height:100vh; display:flex; align-items:center; justify-content:center;
+      padding:24px; background-attachment:fixed; transition:background .3s ease,color .2s; position:relative;
     }
     body.light{background:var(--bg-light);color:var(--text-light)}
     body.dark{background:var(--bg-dark);color:var(--text-dark)}
-
     body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
+      content:""; position:fixed; inset:0; pointer-events:none;
       background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" opacity="0.3"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%232d6eff" stop-opacity="0.1"/><stop offset="100%" stop-color="%239d4eff" stop-opacity="0.05"/></linearGradient></defs><circle cx="200" cy="200" r="180" fill="url(%23grad)" /><circle cx="1000" cy="800" r="250" fill="url(%23grad)" /><circle cx="600" cy="100" r="140" fill="url(%23grad)" /></svg>');
-      background-repeat:no-repeat;
-      background-size:cover;
-      animation:slowFloat 45s infinite alternate;
-      z-index:-2;
+      background-repeat:no-repeat; background-size:cover; animation:slowFloat 45s infinite alternate; z-index:-2;
     }
-
-    @keyframes slowFloat{
-      0%{transform:translate(0,0) scale(1);opacity:.5}
-      100%{transform:translate(2%,1%) scale(1.05);opacity:.9}
-    }
-    @keyframes floatUp{
-      0%{opacity:0;transform:translateY(25px) scale(.97)}
-      100%{opacity:1;transform:translateY(0) scale(1)}
-    }
-    @keyframes subtlePulse{
-      0%{filter:drop-shadow(0 0 2px var(--accent));opacity:.9}
-      100%{filter:drop-shadow(0 0 15px var(--accent));opacity:1}
-    }
-    @keyframes softGlow{
-      0%{box-shadow:0 0 2px var(--danger);border-color:rgba(255,51,102,.3)}
-      100%{box-shadow:0 0 15px var(--danger-glow);border-color:var(--danger)}
-    }
-    @keyframes spin{to{transform:rotate(360deg)}}
-    @keyframes shakeAnim{0%,100%{transform:translateX(0)}25%{transform:translateX(6px)}75%{transform:translateX(-6px)}}
+    @keyframes slowFloat{0%{transform:translate(0,0) scale(1);opacity:.5}100%{transform:translate(2%,1%) scale(1.05);opacity:.9}}
+    @keyframes floatUp{0%{opacity:0;transform:translateY(25px) scale(.97)}100%{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes subtlePulse{0%{filter:drop-shadow(0 0 2px var(--accent));opacity:.9}100%{filter:drop-shadow(0 0 15px var(--accent));opacity:1}}
+    @keyframes softGlow{0%{box-shadow:0 0 2px var(--danger);border-color:rgba(255,51,102,.3)}100%{box-shadow:0 0 15px var(--danger-glow);border-color:var(--danger)}}
+    @keyframes spin{to{transform:rotate(360deg)}} @keyframes shakeAnim{0%,100%{transform:translateX(0)}25%{transform:translateX(6px)}75%{transform:translateX(-6px)}}
 
     .glass-panel{
-      background:var(--card-light);
-      backdrop-filter:blur(18px);
-      border-radius:56px;
-      border:1px solid var(--border-light);
-      box-shadow:var(--shadow);
-      transition:all .35s cubic-bezier(.2,.9,.4,1.1);
+      background:var(--card-light); backdrop-filter:blur(18px); border-radius:56px; border:1px solid var(--border-light);
+      box-shadow:var(--shadow); transition:all .35s cubic-bezier(.2,.9,.4,1.1);
     }
-    body.dark .glass-panel{
-      background:var(--card-dark);
-      border:1px solid var(--border-dark);
-      box-shadow:0 20px 40px -12px rgba(0,0,0,.5),0 0 0 1px rgba(80,140,255,.2);
-    }
-
+    body.dark .glass-panel{background:var(--card-dark);border:1px solid var(--border-dark);box-shadow:0 20px 40px -12px rgba(0,0,0,.5),0 0 0 1px rgba(80,140,255,.2)}
     #loginBox,#mainContent{width:100%;animation:floatUp .7s cubic-bezier(.16,1,.3,1)}
     #loginBox{max-width:620px;padding:42px 38px 48px;text-align:center}
     #mainContent{max-width:1400px;padding:28px 32px}
 
     .logo-modern{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px}
     .logo-icon{
-      font-size:3.2rem;
-      background:linear-gradient(135deg,var(--accent),var(--accent2),#ff3b6f);
-      -webkit-background-clip:text;background-clip:text;color:transparent;
-      filter:drop-shadow(0 0 8px var(--accent));
-      animation:subtlePulse 3s infinite;
+      font-size:3.2rem; background:linear-gradient(135deg,var(--accent),var(--accent2),#ff3b6f);
+      -webkit-background-clip:text;background-clip:text;color:transparent; filter:drop-shadow(0 0 8px var(--accent)); animation:subtlePulse 3s infinite;
     }
     .logo-text{
-      font-size:clamp(1.8rem,6vw,2.7rem);
-      font-weight:900;
-      background:linear-gradient(125deg,var(--accent),#b847ff,var(--danger));
+      font-size:clamp(1.8rem,6vw,2.7rem); font-weight:900; background:linear-gradient(125deg,var(--accent),#b847ff,var(--danger));
       -webkit-background-clip:text;background-clip:text;color:transparent;
     }
 
     .status-pill{
-      display:inline-flex;align-items:center;gap:12px;
-      padding:12px 28px;border-radius:60px;font-weight:700;font-size:.9rem;
-      margin:18px 0 20px;background:rgba(45,110,255,.12);backdrop-filter:blur(8px);
-      transition:background .2s,color .2s,border-color .2s;
+      display:inline-flex;align-items:center;gap:12px;padding:12px 28px;border-radius:60px;font-weight:700;font-size:.9rem;
+      margin:18px 0 20px;background:rgba(45,110,255,.12);backdrop-filter:blur(8px);transition:background .2s,color .2s,border-color .2s;
     }
     .status-connected{background:rgba(0,200,120,.15);color:#00cc88;border:1px solid #00cc88}
     .status-failed{background:rgba(255,51,102,.18);color:#ff5c8a;border:1px solid #ff5c8a}
     .status-loading{background:rgba(45,110,255,.2);color:var(--accent);border:1px solid var(--accent)}
 
     .warning-glow-modern{
-      background:linear-gradient(115deg,rgba(255,51,102,.12),rgba(255,80,120,.05));
-      border-radius:40px;padding:16px 20px;margin:22px 0 20px;
-      backdrop-filter:blur(12px);border:1px solid rgba(255,51,102,.45);
-      display:flex;align-items:center;justify-content:center;gap:14px;font-weight:800;
+      background:linear-gradient(115deg,rgba(255,51,102,.12),rgba(255,80,120,.05)); border-radius:40px; padding:16px 20px; margin:22px 0 20px;
+      backdrop-filter:blur(12px); border:1px solid rgba(255,51,102,.45); display:flex; align-items:center; justify-content:center; gap:14px; font-weight:800;
       animation:softGlow .9s infinite alternate;
     }
 
     .input-group-future{position:relative;margin:32px 0 26px}
     #codeInput{
-      width:100%;padding:18px 30px;border-radius:80px;font-weight:700;text-align:center;
-      font-size:1.1rem;outline:none;transition:.2s;border:1px solid var(--accent);
-      background:var(--input-light);color:var(--input-txt-light);
+      width:100%;padding:18px 30px;border-radius:80px;font-weight:700;text-align:center;font-size:1.1rem;outline:none;transition:.2s;
+      border:1px solid var(--accent);background:var(--input-light);color:var(--input-txt-light);
     }
     body.dark #codeInput{background:var(--input-dark);color:var(--input-txt-dark);border-color:#4d7eff}
     #codeInput:focus{border-color:var(--accent2);box-shadow:0 0 0 4px rgba(45,110,255,.3),0 0 20px var(--accent);transform:scale(1.01)}
@@ -146,9 +87,8 @@
     body.dark .security-notice,body.dark .preview-notice,body.dark #fileInfo{background:var(--info-dark);color:var(--text-dark);border:1px solid rgba(80,140,255,.3)}
 
     .file-card-modern{
-      background:var(--card-light);backdrop-filter:blur(12px);border:1px solid rgba(45,110,255,.3);
-      flex:0 0 180px;border-radius:32px;padding:20px 12px;text-align:center;cursor:pointer;
-      scroll-snap-align:start;transition:.25s;
+      background:var(--card-light);backdrop-filter:blur(12px);border:1px solid rgba(45,110,255,.3);flex:0 0 180px;border-radius:32px;padding:20px 12px;
+      text-align:center;cursor:pointer;scroll-snap-align:start;transition:.25s;
     }
     body.dark .file-card-modern{background:rgba(18,28,55,.7);color:var(--text-dark)}
     body.light .file-card-modern{background:rgba(255,255,255,.7);color:var(--text-light)}
@@ -156,65 +96,53 @@
     .file-card-modern.active{background:linear-gradient(115deg,var(--accent),var(--accent2));color:#fff;transform:scale(1.02)}
     .file-card-modern.active i{color:#fff}
 
-    .btn-primary,.btn-secondary{
-      width:100%;border:none;border-radius:60px;padding:15px 20px;font-weight:800;font-size:1rem;
-      display:flex;align-items:center;justify-content:center;gap:12px;transition:.25s;cursor:pointer;color:#fff;
-      background:linear-gradient(105deg,var(--accent),var(--accent2));box-shadow:0 8px 20px -5px var(--accent);
+    .btn-primary,.btn-secondary,.btn-exam-special{
+      width:100%;border:none;border-radius:60px;padding:15px 20px;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;
+      gap:12px;transition:.25s;cursor:pointer;
     }
+    .btn-primary,.btn-secondary{color:#fff;background:linear-gradient(105deg,var(--accent),var(--accent2));box-shadow:0 8px 20px -5px var(--accent)}
     .btn-secondary{background:linear-gradient(105deg,#ff6a3d,var(--danger));box-shadow:0 8px 20px -5px var(--danger-glow);margin-top:12px}
-    .btn-primary:hover,.btn-secondary:hover{transform:translateY(-4px) scale(1.01);filter:brightness(1.07)}
+    .btn-exam-special{background:linear-gradient(105deg,#f7b42c,#fc575e);box-shadow:0 8px 20px -5px rgba(247,180,44,.5);margin-top:12px;color:#2c1a00;font-size:.95rem}
+    body.dark .btn-exam-special{color:#ffecb3;background:linear-gradient(105deg,#e6a017,#d43f47)}
+    .btn-primary:hover,.btn-secondary:hover,.btn-exam-special:hover{transform:translateY(-4px) scale(1.01);filter:brightness(1.07)}
 
     .files-grid{
-      display:flex;flex-wrap:nowrap;overflow-x:auto;gap:18px;padding-bottom:16px;
-      scroll-snap-type:x mandatory;margin:25px 0 30px;-webkit-overflow-scrolling:touch;
+      display:flex;flex-wrap:nowrap;overflow-x:auto;gap:18px;padding-bottom:16px;scroll-snap-type:x mandatory;margin:25px 0 30px;-webkit-overflow-scrolling:touch;
     }
-
     .pdf-glass-container{
-      border-radius:42px;overflow:hidden;height:min(68vh,640px);background:rgba(0,0,0,.2);
-      backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.2);
+      border-radius:42px;overflow:hidden;height:min(68vh,640px);background:rgba(0,0,0,.2);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.2);
     }
     #pdfViewer iframe{transition:.2s;width:100%;height:100%;border:none;border-radius:28px}
-
     .controls-modern{display:flex;gap:18px;justify-content:center;margin-top:24px;flex-wrap:wrap}
     .action-icon-btn{
-      background:var(--card-light);backdrop-filter:blur(12px);border:1px solid var(--accent);
-      border-radius:50px;padding:12px 28px;font-weight:700;display:inline-flex;gap:12px;cursor:pointer;transition:.2s;
+      background:var(--card-light);backdrop-filter:blur(12px);border:1px solid var(--accent);border-radius:50px;padding:12px 28px;font-weight:700;
+      display:inline-flex;gap:12px;cursor:pointer;transition:.2s;font-size:.9rem;
     }
     body.dark .action-icon-btn{background:rgba(18,28,55,.8);color:var(--text-dark)}
     body.light .action-icon-btn{background:rgba(255,255,255,.8);color:var(--text-light)}
     .action-icon-btn:hover{transform:translateY(-3px);background:var(--accent);color:#fff;border-color:#fff}
 
-    .fullscreen-overlay{
-      position:fixed;inset:0;display:none;z-index:9998;background:#0a0c15;flex-direction:column;
-    }
-    .fullscreen-container{
-      width:100%;height:100%;display:flex;flex-direction:column;overflow:auto;-webkit-overflow-scrolling:touch;
-      background:#1a1e2c;position:relative;
-    }
+    .fullscreen-overlay{position:fixed;inset:0;display:none;z-index:9998;background:#0a0c15;flex-direction:column}
+    .fullscreen-container{width:100%;height:100%;display:flex;flex-direction:column;overflow:auto;-webkit-overflow-scrolling:touch;background:#1a1e2c;position:relative}
     .fullscreen-iframe{width:100%;height:100vh;min-height:100%;border:none}
     .floating-exit-btn{
-      position:fixed;top:24px;inset-inline-end:24px;width:52px;height:52px;border-radius:50%;
-      background:rgba(0,0,0,.75);backdrop-filter:blur(12px);color:#ff3366;font-size:1.6rem;
-      border:1px solid var(--danger);display:flex;align-items:center;justify-content:center;
-      cursor:pointer;opacity:0;pointer-events:none;transition:.2s;z-index:10000;
+      position:fixed;top:24px;inset-inline-end:24px;width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);
+      color:#ff3366;font-size:1.6rem;border:1px solid var(--danger);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:.2s;z-index:10000;
     }
     .floating-exit-btn.visible{opacity:1;pointer-events:auto}
-
     .theme-toggle{
-      position:fixed;top:22px;left:22px;z-index:9999;width:52px;height:52px;border-radius:32px;
-      display:grid;place-items:center;background:rgba(255,255,255,.3);backdrop-filter:blur(16px);
-      cursor:pointer;font-size:1.5rem;box-shadow:0 0 12px rgba(0,0,0,.1);
+      position:fixed;top:22px;left:22px;z-index:9999;width:52px;height:52px;border-radius:32px;display:grid;place-items:center;background:rgba(255,255,255,.3);
+      backdrop-filter:blur(16px);cursor:pointer;font-size:1.5rem;box-shadow:0 0 12px rgba(0,0,0,.1);
     }
-
     .shake{animation:shakeAnim .4s}
+    .exam-badge{
+      background:linear-gradient(120deg,#f7b42c,#fc575e);color:#2c1a00;padding:4px 14px;border-radius:40px;font-size:.8rem;font-weight:800;margin-right:12px;
+    }
+    body.dark .exam-badge{background:#e6a017;color:#2d1f00}
 
     @media (max-width:680px){
-      body{padding:14px}
-      #loginBox{padding:32px 24px}
-      .file-card-modern{flex:0 0 140px;padding:16px 8px}
-      .controls-modern{flex-direction:column}
-      .action-icon-btn{width:100%;justify-content:center}
-      .pdf-glass-container{height:55vh}
+      body{padding:14px} #loginBox{padding:32px 24px} .file-card-modern{flex:0 0 140px;padding:16px 8px} .controls-modern{flex-direction:column}
+      .action-icon-btn{width:100%;justify-content:center;font-size:.85rem;padding:12px 16px} .pdf-glass-container{height:55vh} .btn-exam-special{font-size:.85rem;padding:12px 14px}
     }
   </style>
 </head>
@@ -222,7 +150,7 @@
   <div class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i></div>
 
   <div id="loginBox" class="glass-panel" style="display:none;">
-    <div class="logo-modern"><i class="fas fa-shield-hal logo-icon"></i><span class="logo-text">ملخصات الصحيح</span></div>
+    <div class="logo-modern"><i class="fas fa-shield-alt logo-icon"></i><span class="logo-text">ملخصات الصحيح</span></div>
     <div class="login-header">
       <h2 style="font-weight:800;font-size:clamp(1.6rem,5vw,2.1rem);background:linear-gradient(130deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;">نظام العرض الآمن</h2>
       <p style="margin-top:8px;">أدخل كود التسجيل للوصول الفوري | جهاز واحد لكل كود</p>
@@ -232,6 +160,7 @@
     <div class="input-group-future"><input id="codeInput" type="text" placeholder="مثال: X7G9-12AB" autocomplete="off" maxlength="20" /></div>
     <button class="btn-primary" onclick="checkCode()"><i class="fas fa-fingerprint"></i> دخول آمن</button>
     <button class="btn-secondary" onclick="previewWithoutLogin()"><i class="fas fa-eye"></i> معاينة تجريبية</button>
+    <button class="btn-exam-special" onclick="showExamWithoutLogin()"><i class="fas fa-graduation-cap"></i> عرض إمتحان التعيين خاص كلية أصول القاهرة 2026</button>
     <div id="loading" style="display:none;margin-top:18px;"><div class="spinner" style="width:44px;height:44px;border:4px solid rgba(0,0,0,0.1);border-top-color:var(--accent);border-radius:50%;margin:0 auto;animation:spin .8s linear infinite;"></div><p>جاري التحقق...</p></div>
     <div class="progress-bar" style="display:none;height:6px;background:rgba(0,0,0,0.1);border-radius:10px;margin-top:12px;"><div class="progress-fill" style="width:0%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:10px;"></div></div>
     <p id="msg" style="margin-top:14px;font-weight:700;"></p>
@@ -279,6 +208,7 @@
 
     <div class="controls-modern">
       <div class="action-icon-btn" onclick="openFullscreen()"><i class="fas fa-expand-alt"></i> ملء الشاشة</div>
+      <div class="action-icon-btn" onclick="showExamFileInMain()"><i class="fas fa-graduation-cap"></i> عرض إمتحان التعيين خاص كلية أصول القاهرة 2026</div>
       <div class="action-icon-btn" onclick="goBackToLogin()"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</div>
     </div>
   </div>
@@ -289,241 +219,179 @@
   </div>
 
   <script>
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxEAM95n8OovOcA3QqHCRJQ9ELrrl4Q3NaedKIvVTPf4SZnitgrVErmR_4N8Cw9wNBUbQ/exec";
-    const $ = id => document.getElementById(id);
-    const q = s => document.querySelector(s);
+    const WEB_APP_URL="https://script.google.com/macros/s/AKfycbxEAM95n8OovOcA3QqHCRJQ9ELrrl4Q3NaedKIvVTPf4SZnitgrVErmR_4N8Cw9wNBUbQ/exec",
+      $=id=>document.getElementById(id), q=s=>document.querySelector(s),
+      EXAM_FILE_ID="1rZKNRAkubL-SOkv8euXWDOtRJvkhhUhq",
+      EXAM_NAME="📘 امتحان التعيين - كلية أصول القاهرة 2026",
+      EXAM_DESC="امتحان التعيين  لكلية أصول الدين  قسم التفسير جامعة القاهرة  2026. بنظام التقييم الحديث.";
 
-    let currentFiles = [], currentDisplayFileId = null, fullscreenActive = false, hideTimeout = null;
-    const overlay = $("fullscreenOverlay"), fsIframe = $("fullscreenViewer"), exitBtn = $("floatingExitBtn"), fullscreenContainer = $("fullscreenContainer");
-    const themeBtn = $("themeToggleBtn"), themeIcon = themeBtn.querySelector("i");
+    let currentFiles=[], currentDisplayFileId=null, fullscreenActive=false, hideTimeout=null;
+    const overlay=$("fullscreenOverlay"), fsIframe=$("fullscreenViewer"), exitBtn=$("floatingExitBtn"), fullscreenContainer=$("fullscreenContainer"),
+          themeBtn=$("themeToggleBtn"), themeIcon=themeBtn.querySelector("i");
 
-    const setTheme = t => {
-      const dark = t === "dark";
-      document.body.classList.toggle("dark", dark);
-      document.body.classList.toggle("light", !dark);
-      themeIcon.className = dark ? "fas fa-sun" : "fas fa-moon";
-      localStorage.setItem("theme", dark ? "dark" : "light");
+    const setTheme=t=>{
+      const dark=t==="dark";
+      document.body.classList.toggle("dark",dark);
+      document.body.classList.toggle("light",!dark);
+      themeIcon.className=dark?"fas fa-sun":"fas fa-moon";
+      localStorage.setItem("theme",dark?"dark":"light");
+    };
+    const loadStoredTheme=()=>setTheme(localStorage.getItem("theme")==="dark"||localStorage.getItem("theme")==="light" ? localStorage.getItem("theme") : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const getDriveEmbedUrl=id=>`https://drive.google.com/file/d/${id}/preview`;
+    const getDeviceFingerprint=()=>{const s=navigator.userAgent+navigator.platform+screen.width+screen.height+screen.colorDepth;let h=0;for(let i=0;i<s.length;i++)h=((h<<5)-h)+s.charCodeAt(i),h|=0;return Math.abs(h).toString()};
+    const setStatus=(ok,loading=false)=>{
+      const html=loading?`<i class="fas fa-sync-alt fa-spin"></i> جاري الاتصال بالسيرفر...`:ok?`<i class="fas fa-check-circle"></i> متصل بالخادم الآمن`:`<i class="fas fa-exclamation-triangle"></i> انقطاع الاتصال`,
+            cls=loading?"status-loading":ok?"status-connected":"status-failed";
+      ["serverStatus","serverStatusMain"].forEach(id=>{const el=$(id); if(el){el.className=`status-pill ${cls}`; el.innerHTML=html;}});
     };
 
-    const loadStoredTheme = () => {
-      const t = localStorage.getItem("theme");
-      setTheme(t === "dark" || t === "light" ? t : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    };
-
-    const getDriveEmbedUrl = id => `https://drive.google.com/file/d/${id}/preview`;
-
-    const getDeviceFingerprint = () => {
-      const s = navigator.userAgent + navigator.platform + screen.width + screen.height + screen.colorDepth;
-      let h = 0;
-      for (let i = 0; i < s.length; i++) h = ((h << 5) - h) + s.charCodeAt(i), h |= 0;
-      return Math.abs(h).toString();
-    };
-
-    const setStatus = (ok, loading = false) => {
-      const html = loading ? `<i class="fas fa-sync-alt fa-spin"></i> جاري الاتصال بالسيرفر...`
-        : ok ? `<i class="fas fa-check-circle"></i> متصل بالخادم الآمن`
-        : `<i class="fas fa-exclamation-triangle"></i> انقطاع الاتصال`;
-      const cls = loading ? "status-loading" : ok ? "status-connected" : "status-failed";
-      ["serverStatus", "serverStatusMain"].forEach(id => { const el = $(id); if (el) { el.className = `status-pill ${cls}`; el.innerHTML = html; } });
-    };
-
-    async function checkServerConnection() {
-      setStatus(false, true);
-      try {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 10000);
-        const fd = new FormData(); fd.append("check", "1");
-        const res = await fetch(WEB_APP_URL, { method: "POST", body: fd, signal: controller.signal });
-        clearTimeout(timeout);
-        await res.json();
-        setStatus(true);
-      } catch {
-        setStatus(false);
-      }
+    async function checkServerConnection(){
+      setStatus(false,true);
+      try{
+        const c=new AbortController(), t=setTimeout(()=>c.abort(),1e4), fd=new FormData();
+        fd.append("check","1");
+        const r=await fetch(WEB_APP_URL,{method:"POST",body:fd,signal:c.signal});
+        clearTimeout(t); await r.json(); setStatus(true);
+      }catch{setStatus(false)}
     }
 
-    function showMessage(text, isError = false) {
-      const msg = $("msg");
-      msg.textContent = text;
-      msg.style.cssText = `margin-top:14px;padding:10px 22px;border-radius:50px;display:inline-block;background:${isError ? "rgba(255,51,102,0.2)" : "rgba(0,200,120,0.18)"};color:${isError ? "#ff5c8a" : "#00cc88"};font-weight:800;backdrop-filter:blur(4px);`;
-      if (isError) $("codeInput").classList.add("shake");
-      setTimeout(() => { msg.textContent = ""; msg.style.cssText = ""; if (isError) $("codeInput").classList.remove("shake"); }, 4000);
+    function showMessage(text,isError=false){
+      const msg=$("msg");
+      msg.textContent=text;
+      msg.style.cssText=`margin-top:14px;padding:10px 22px;border-radius:50px;display:inline-block;background:${isError?"rgba(255,51,102,0.2)":"rgba(0,200,120,0.18)"};color:${isError?"#ff5c8a":"#00cc88"};font-weight:800;backdrop-filter:blur(4px);`;
+      if(isError)$("codeInput").classList.add("shake");
+      setTimeout(()=>{msg.textContent="";msg.style.cssText="";if(isError)$("codeInput").classList.remove("shake")},4000);
     }
 
-    const updateProgressBar = p => {
-      const bar = q(".progress-bar"), fill = q(".progress-fill");
-      if (bar && fill) { bar.style.display = p > 0 ? "block" : "none"; fill.style.width = `${p}%`; }
-    };
+    const updateProgressBar=p=>{const bar=q(".progress-bar"),fill=q(".progress-fill"); if(bar&&fill){bar.style.display=p>0?"block":"none"; fill.style.width=`${p}%`;}};
 
-    function displayPDF(fileId, fileName = "ملف PDF", description = "لا يوجد وصف") {
-      if (!fileId) return;
-      currentDisplayFileId = fileId;
-      $("currentFileName").innerHTML = `<i class="fas fa-file-pdf"></i> ${fileName}`;
-      $("currentFileDescription").textContent = description;
-      $("fileInfo").style.display = "flex";
-      $("pdfViewer").innerHTML = `
-        <div style="display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;">
-          <div class="spinner" style="width:48px;height:48px;border:4px solid rgba(0,0,0,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;"></div>
-          <p>جاري تحميل المستند...</p>
-        </div>`;
-      setTimeout(() => {
-        $("pdfViewer").innerHTML = `<iframe src="${getDriveEmbedUrl(fileId)}" allowfullscreen style="width:100%;height:100%;border:none;border-radius:28px;"></iframe>`;
-      }, 200);
+    function displayCustomPDF(fileId,fileName,fileDescription,isExternalExam=false){
+      if(!fileId)return;
+      currentDisplayFileId=fileId;
+      $("currentFileName").innerHTML=`<i class="fas fa-file-pdf"></i> ${fileName} ${isExternalExam?'<span class="exam-badge">📌 امتحان التعيين</span>':''}`;
+      $("currentFileDescription").textContent=fileDescription;
+      $("fileInfo").style.display="flex";
+      if(isExternalExam) document.querySelectorAll(".file-card-modern").forEach(btn=>btn.classList.remove("active"));
+      $("pdfViewer").innerHTML=`<div style="display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;"><div class="spinner" style="width:48px;height:48px;border:4px solid rgba(0,0,0,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;"></div><p>جاري تحميل المستند...</p></div>`;
+      setTimeout(()=>{$("pdfViewer").innerHTML=`<iframe src="${getDriveEmbedUrl(fileId)}" allowfullscreen style="width:100%;height:100%;border:none;border-radius:28px;"></iframe>`},200);
+    }
+    const displayPDF=(fileId,fileName="ملف PDF",description="لا يوجد وصف")=>displayCustomPDF(fileId,fileName,description,false);
+
+    function showFile(index){
+      if(!currentFiles.length)return;
+      document.querySelectorAll(".file-card-modern").forEach((btn,i)=>btn.classList.toggle("active",i===index));
+      const f=currentFiles[index];
+      displayPDF(f.id,f.name||`ملف ${index+1}`,f.description||"ملخص دراسي محمي");
     }
 
-    function showFile(index) {
-      if (!currentFiles.length) return;
-      document.querySelectorAll(".file-card-modern").forEach((btn, i) => btn.classList.toggle("active", i === index));
-      const f = currentFiles[index];
-      displayPDF(f.id, f.name || `ملف ${index + 1}`, f.description || "ملخص دراسي محمي");
-    }
-
-    function createFileButtons() {
-      const wrap = $("filesButtons");
-      wrap.innerHTML = "";
-      currentFiles.forEach((file, idx) => {
-        const btn = document.createElement("div");
-        btn.className = "file-card-modern" + (idx === 0 ? " active" : "");
-        btn.innerHTML = `<i class="fas fa-file-pdf"></i><div>${file.name || `ملف ${idx + 1}`}</div>`;
-        btn.onclick = () => showFile(idx);
+    function createFileButtons(){
+      const wrap=$("filesButtons"); wrap.innerHTML="";
+      currentFiles.forEach((file,idx)=>{
+        const btn=document.createElement("div");
+        btn.className="file-card-modern"+(idx===0?" active":"");
+        btn.innerHTML=`<i class="fas fa-file-pdf"></i><div>${file.name||`ملف ${idx+1}`}</div>`;
+        btn.onclick=()=>showFile(idx);
         wrap.appendChild(btn);
       });
-      $("filesCount").innerText = `${currentFiles.length} ملفات`;
+      $("filesCount").innerText=`${currentFiles.length} ملفات`;
     }
 
-    function previewWithoutLogin() {
-      $("loginBox").style.display = "none";
-      $("mainContent").style.display = "block";
-      $("filesSection").style.display = "none";
-      $("previewNotice").style.display = "flex";
-      displayPDF("173VBPNrH9At_JYXtOLB1ZHXuoGsn_Q1f", "معاينة تجريبية - نموذج PDF", "هذا ملف معاينة تجريبي باستخدام العارض المتقدم");
+    function showExamWithoutLogin(){
+      $("loginBox").style.display="none"; $("mainContent").style.display="block"; $("filesSection").style.display="none";
+      $("previewNotice").style.display="flex";
+      $("previewNotice").innerHTML=`<i class="fas fa-graduation-cap" style="color:#ffbb33;"></i> أنت تعرض <strong>امتحان التعيين الخاص بكلية أصول القاهرة 2026</strong> (بدون تسجيل دخول). يمكنك العودة لتسجيل الدخول من زر "تسجيل الخروج".`;
+      displayCustomPDF(EXAM_FILE_ID,EXAM_NAME,EXAM_DESC,true); checkServerConnection();
+    }
+
+    function showExamFileInMain(){
+      if($("mainContent").style.display!=="block")return;
+      const notice=$("previewNotice");
+      if(notice.style.display==="flex" && notice.innerHTML.includes("معاينة تجريبية"))
+        notice.innerHTML=`<i class="fas fa-graduation-cap" style="color:#ffbb33;"></i> <strong>امتحان التعيين - كلية أصول القاهرة 2026</strong> (وضع المعاينة) يمكنك تسجيل الدخول لتصفح جميع الملفات.`;
+      if($("filesSection").style.display!=="none") document.querySelectorAll(".file-card-modern").forEach(btn=>btn.classList.remove("active"));
+      displayCustomPDF(EXAM_FILE_ID,EXAM_NAME,EXAM_DESC,true);
+    }
+
+    function previewWithoutLogin(){
+      $("loginBox").style.display="none"; $("mainContent").style.display="block"; $("filesSection").style.display="none";
+      $("previewNotice").style.display="flex";
+      $("previewNotice").innerHTML=`<i class="fas fa-info-circle"></i> أنت في وضع المعاينة التجريبية. ملف PDF نموذجي للتعريف بالنظام.`;
+      displayCustomPDF("173VBPNrH9At_JYXtOLB1ZHXuoGsn_Q1f","معاينة تجريبية - نظام الملخصات","هذا ملف معاينة تجريبي باستخدام العارض المتقدم",false);
       checkServerConnection();
     }
 
-    async function checkCode() {
-      const code = $("codeInput").value.trim();
-      if (!code) return showMessage("❗ الرجاء إدخال الكود", true);
-
-      $("loading").style.display = "block";
-      updateProgressBar(35);
-
-      const fd = new FormData();
-      fd.append("code", code);
-      fd.append("deviceId", getDeviceFingerprint());
-
-      try {
-        const res = await fetch(WEB_APP_URL, { method: "POST", body: fd });
-        const result = await res.json();
-        $("loading").style.display = "none";
-        updateProgressBar(100);
-        setTimeout(() => updateProgressBar(0), 400);
-
-        if (result.status === "ok") {
-          currentFiles = result.pdfFiles || [];
-          if (!currentFiles.length) return showMessage("لا توجد ملفات مرتبطة بهذا الكود", true);
-          $("loginBox").style.display = "none";
-          $("mainContent").style.display = "block";
-          $("filesSection").style.display = "block";
-          $("previewNotice").style.display = "none";
-          createFileButtons();
-          showFile(0);
-        } else if (result.status === "other_device") {
-          showMessage("⚠️ الكود مستخدم على جهاز آخر (جهاز واحد لكل كود)", true);
-        } else if (result.status === "invalid") {
-          showMessage("❌ كود غير صحيح", true);
-        } else {
-          showMessage("⚠️ حدث خطأ غير متوقع", true);
-        }
-      } catch {
-        $("loading").style.display = "none";
-        updateProgressBar(0);
-        showMessage("⚠️ فشل الاتصال بالخادم", true);
+    async function checkCode(){
+      const code=$("codeInput").value.trim();
+      if(!code) return showMessage("❗ الرجاء إدخال الكود",true);
+      $("loading").style.display="block"; updateProgressBar(35);
+      const fd=new FormData(); fd.append("code",code); fd.append("deviceId",getDeviceFingerprint());
+      try{
+        const res=await fetch(WEB_APP_URL,{method:"POST",body:fd}), result=await res.json();
+        $("loading").style.display="none"; updateProgressBar(100); setTimeout(()=>updateProgressBar(0),400);
+        if(result.status==="ok"){
+          currentFiles=result.pdfFiles||[];
+          if(!currentFiles.length) return showMessage("لا توجد ملفات مرتبطة بهذا الكود",true);
+          $("loginBox").style.display="none"; $("mainContent").style.display="block"; $("filesSection").style.display="block"; $("previewNotice").style.display="none";
+          createFileButtons(); showFile(0);
+        }else if(result.status==="other_device") showMessage("⚠️ الكود مستخدم على جهاز آخر (جهاز واحد لكل كود)",true);
+        else if(result.status==="invalid") showMessage("❌ كود غير صحيح",true);
+        else showMessage("⚠️ حدث خطأ غير متوقع",true);
+      }catch{
+        $("loading").style.display="none"; updateProgressBar(0); showMessage("⚠️ فشل الاتصال بالخادم",true);
       }
     }
 
-    function showFloatingButtonTemporarily() {
-      if (!fullscreenActive) return;
+    function showFloatingButtonTemporarily(){
+      if(!fullscreenActive)return;
       exitBtn.classList.add("visible");
       clearTimeout(hideTimeout);
-      hideTimeout = setTimeout(() => exitBtn.classList.remove("visible"), 2800);
+      hideTimeout=setTimeout(()=>exitBtn.classList.remove("visible"),2800);
     }
-
-    function onFullscreenChange() {
-      if (!document.fullscreenElement && fullscreenActive) exitFullscreenMode();
-    }
-
-    function exitFullscreenMode() {
-      if (document.fullscreenElement) {
-        if (document.exitFullscreen) document.exitFullscreen();
-        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    function onFullscreenChange(){ if(!document.fullscreenElement && fullscreenActive) exitFullscreenMode(); }
+    function exitFullscreenMode(){
+      if(document.fullscreenElement){
+        if(document.exitFullscreen) document.exitFullscreen();
+        else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
       }
-      overlay.style.display = "none";
-      document.body.style.overflow = "auto";
-      fsIframe.src = "";
-      fullscreenActive = false;
-      exitBtn.classList.remove("visible");
-      clearTimeout(hideTimeout);
-      document.removeEventListener("keydown", fullscreenEscapeHandler);
+      overlay.style.display="none"; document.body.style.overflow="auto"; fsIframe.src=""; fullscreenActive=false; exitBtn.classList.remove("visible");
+      clearTimeout(hideTimeout); document.removeEventListener("keydown",fullscreenEscapeHandler);
+    }
+    function fullscreenEscapeHandler(e){ if(e.key==="Escape" && fullscreenActive) exitFullscreenMode(); }
+
+    async function openFullscreen(){
+      if(!currentDisplayFileId) return showMessage("لا يوجد ملف لعرضه",true);
+      fsIframe.src=getDriveEmbedUrl(currentDisplayFileId); overlay.style.display="flex"; document.body.style.overflow="hidden";
+      try{ if(overlay.requestFullscreen) await overlay.requestFullscreen(); else if(overlay.webkitRequestFullscreen) await overlay.webkitRequestFullscreen(); }catch(e){ console.warn(e); }
+      fullscreenActive=true; showFloatingButtonTemporarily(); document.addEventListener("keydown",fullscreenEscapeHandler); setTimeout(()=>{fullscreenContainer.scrollTop=0},200);
     }
 
-    function fullscreenEscapeHandler(e) {
-      if (e.key === "Escape" && fullscreenActive) exitFullscreenMode();
+    function goBackToLogin(){
+      if(fullscreenActive) exitFullscreenMode();
+      $("mainContent").style.display="none"; $("loginBox").style.display="block"; $("codeInput").value=""; $("filesButtons").innerHTML=""; $("fileInfo").style.display="none";
+      $("previewNotice").style.display="none";
+      $("pdfViewer").innerHTML=`<div style="text-align:center;"><i class="fas fa-file-pdf" style="font-size:4rem;margin-bottom:12px;color:var(--accent);"></i><h3>اختر ملفاً للعرض</h3></div>`;
+      currentFiles=[]; checkServerConnection();
     }
 
-    async function openFullscreen() {
-      if (!currentDisplayFileId) return showMessage("لا يوجد ملف لعرضه", true);
-      fsIframe.src = getDriveEmbedUrl(currentDisplayFileId);
-      overlay.style.display = "flex";
-      document.body.style.overflow = "hidden";
-      try {
-        if (overlay.requestFullscreen) await overlay.requestFullscreen();
-        else if (overlay.webkitRequestFullscreen) await overlay.webkitRequestFullscreen();
-      } catch (e) { console.warn(e); }
-      fullscreenActive = true;
-      showFloatingButtonTemporarily();
-      document.addEventListener("keydown", fullscreenEscapeHandler);
-      setTimeout(() => { fullscreenContainer.scrollTop = 0; }, 200);
+    function setupFullscreenEvents(){
+      overlay.addEventListener("touchstart",showFloatingButtonTemporarily);
+      overlay.addEventListener("mousemove",showFloatingButtonTemporarily);
+      document.addEventListener("fullscreenchange",onFullscreenChange);
+      document.addEventListener("webkitfullscreenchange",onFullscreenChange);
+      exitBtn.onclick=exitFullscreenMode;
     }
 
-    function goBackToLogin() {
-      if (fullscreenActive) exitFullscreenMode();
-      $("mainContent").style.display = "none";
-      $("loginBox").style.display = "block";
-      $("codeInput").value = "";
-      $("filesButtons").innerHTML = "";
-      $("fileInfo").style.display = "none";
-      $("previewNotice").style.display = "none";
-      $("pdfViewer").innerHTML = `
-        <div style="text-align:center;">
-          <i class="fas fa-file-pdf" style="font-size:4rem;margin-bottom:12px;color:var(--accent);"></i>
-          <h3>اختر ملفاً للعرض</h3>
-        </div>`;
-      checkServerConnection();
-    }
-
-    function setupFullscreenEvents() {
-      overlay.addEventListener("touchstart", showFloatingButtonTemporarily);
-      overlay.addEventListener("mousemove", showFloatingButtonTemporarily);
-      document.addEventListener("fullscreenchange", onFullscreenChange);
-      document.addEventListener("webkitfullscreenchange", onFullscreenChange);
-      exitBtn.onclick = exitFullscreenMode;
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      $("loginBox").style.display = "block";
-      $("mainContent").style.display = "none";
-      overlay.style.display = "none";
-      $("codeInput").addEventListener("keypress", e => { if (e.key === "Enter") checkCode(); });
-      themeBtn.onclick = () => setTheme(document.body.classList.contains("dark") ? "light" : "dark");
-      loadStoredTheme();
-      checkServerConnection();
-      setupFullscreenEvents();
+    document.addEventListener("DOMContentLoaded",()=>{
+      $("loginBox").style.display="block"; $("mainContent").style.display="none"; overlay.style.display="none";
+      $("codeInput").addEventListener("keypress",e=>{if(e.key==="Enter") checkCode()});
+      themeBtn.onclick=()=>setTheme(document.body.classList.contains("dark")?"light":"dark");
+      loadStoredTheme(); checkServerConnection(); setupFullscreenEvents();
     });
 
-    document.addEventListener("contextmenu", e => { e.preventDefault(); showMessage("❌ حماية المحتوى: النقر الأيمن معطل", true); });
-    document.addEventListener("keydown", e => {
-      if ((e.ctrlKey || e.metaKey) && ["s","p","c"].includes(e.key.toLowerCase())) { e.preventDefault(); showMessage("❌ هذه الخاصية غير مسموحة", true); return false; }
-      if (e.key === "F12") { e.preventDefault(); showMessage("❌ أدوات المطورين معطلة", true); return false; }
+    document.addEventListener("contextmenu",e=>{e.preventDefault(); showMessage("❌ حماية المحتوى: النقر الأيمن معطل",true)});
+    document.addEventListener("keydown",e=>{
+      if((e.ctrlKey||e.metaKey)&&["s","p","c"].includes(e.key.toLowerCase())){e.preventDefault(); showMessage("❌ هذه الخاصية غير مسموح",true); return false}
+      if(e.key==="F12"){e.preventDefault(); showMessage("❌ أدوات المطورين معطلة",true); return false}
     });
   </script>
 </body>
