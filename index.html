@@ -1,398 +1,415 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes,viewport-fit=cover" />
-  <title>ملخصات الصحيح | نظام الامتحان التعيين 2026</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>تحديث الخادم | قيد التحسين</title>
+    <!-- Google Fonts: خط حديث وجميل يدعم العربية -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(145deg, #e0f0ff 0%, #f9e6ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
-    :root{
-      --bg-light:radial-gradient(circle at 10% 20%,rgba(0,180,255,.12),rgba(0,255,200,.02) 70%),linear-gradient(125deg,#f0f5fe 0%,#e9f0fc 100%);
-      --bg-dark:radial-gradient(circle at 15% 25%,rgba(0,200,255,.15),rgba(20,30,70,.9) 80%),linear-gradient(115deg,#03061a,#0a1032);
-      --card-light:rgba(255,255,255,.85); --card-dark:rgba(12,18,45,.85);
-      --border-light:rgba(0,0,0,.1); --border-dark:rgba(80,140,255,.35);
-      --text-light:#0f1e3a; --text-dark:#f0f3ff;
-      --accent:#2d6eff; --accent2:#9d4eff; --danger:#ff3366; --danger-glow:rgba(255,51,102,.4);
-      --shadow:0 20px 40px -15px rgba(0,0,0,.2),0 0 0 1px rgba(0,100,255,.1);
-      --input-light:rgba(245,248,255,.9); --input-dark:rgba(5,10,30,.9);
-      --input-txt-light:#0a1c2f; --input-txt-dark:#eef2ff;
-      --info-light:rgba(240,248,255,.8); --info-dark:rgba(18,25,55,.8);
-    }
-    body{
-      font-family:'Tajawal','Inter',sans-serif; min-height:100vh; display:flex; align-items:center; justify-content:center;
-      padding:24px; background-attachment:fixed; transition:background .3s ease,color .2s; position:relative;
-    }
-    body.light{background:var(--bg-light);color:var(--text-light)}
-    body.dark{background:var(--bg-dark);color:var(--text-dark)}
-    body::before{
-      content:""; position:fixed; inset:0; pointer-events:none;
-      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" opacity="0.3"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%232d6eff" stop-opacity="0.1"/><stop offset="100%" stop-color="%239d4eff" stop-opacity="0.05"/></linearGradient></defs><circle cx="200" cy="200" r="180" fill="url(%23grad)" /><circle cx="1000" cy="800" r="250" fill="url(%23grad)" /><circle cx="600" cy="100" r="140" fill="url(%23grad)" /></svg>');
-      background-repeat:no-repeat; background-size:cover; animation:slowFloat 45s infinite alternate; z-index:-2;
-    }
-    @keyframes slowFloat{0%{transform:translate(0,0) scale(1);opacity:.5}100%{transform:translate(2%,1%) scale(1.05);opacity:.9}}
-    @keyframes floatUp{0%{opacity:0;transform:translateY(25px) scale(.97)}100%{opacity:1;transform:translateY(0) scale(1)}}
-    @keyframes subtlePulse{0%{filter:drop-shadow(0 0 2px var(--accent));opacity:.9}100%{filter:drop-shadow(0 0 15px var(--accent));opacity:1}}
-    @keyframes softGlow{0%{box-shadow:0 0 2px var(--danger);border-color:rgba(255,51,102,.3)}100%{box-shadow:0 0 15px var(--danger-glow);border-color:var(--danger)}}
-    @keyframes spin{to{transform:rotate(360deg)}} @keyframes shakeAnim{0%,100%{transform:translateX(0)}25%{transform:translateX(6px)}75%{transform:translateX(-6px)}}
+        /* خلفية متحركة خفيفة */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            animation: slowMove 30s infinite alternate;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-    .glass-panel{
-      background:var(--card-light); backdrop-filter:blur(18px); border-radius:56px; border:1px solid var(--border-light);
-      box-shadow:var(--shadow); transition:all .35s cubic-bezier(.2,.9,.4,1.1);
-    }
-    body.dark .glass-panel{background:var(--card-dark);border:1px solid var(--border-dark);box-shadow:0 20px 40px -12px rgba(0,0,0,.5),0 0 0 1px rgba(80,140,255,.2)}
-    #loginBox,#mainContent{width:100%;animation:floatUp .7s cubic-bezier(.16,1,.3,1)}
-    #loginBox{max-width:620px;padding:42px 38px 48px;text-align:center}
-    #mainContent{max-width:1400px;padding:28px 32px}
+        @keyframes slowMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(5%, 5%); }
+        }
 
-    .logo-modern{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px}
-    .logo-icon{
-      font-size:3.2rem; background:linear-gradient(135deg,var(--accent),var(--accent2),#ff3b6f);
-      -webkit-background-clip:text;background-clip:text;color:transparent; filter:drop-shadow(0 0 8px var(--accent)); animation:subtlePulse 3s infinite;
-    }
-    .logo-text{
-      font-size:clamp(1.8rem,6vw,2.7rem); font-weight:900; background:linear-gradient(125deg,var(--accent),#b847ff,var(--danger));
-      -webkit-background-clip:text;background-clip:text;color:transparent;
-    }
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 56px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
+            width: 100%;
+            padding: 2rem 1.8rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,240,0.6);
+            z-index: 2;
+            position: relative;
+        }
 
-    .status-pill{
-      display:inline-flex;align-items:center;gap:12px;padding:12px 28px;border-radius:60px;font-weight:700;font-size:.9rem;
-      margin:18px 0 20px;background:rgba(45,110,255,.12);backdrop-filter:blur(8px);transition:background .2s,color .2s,border-color .2s;
-    }
-    .status-connected{background:rgba(0,200,120,.15);color:#00cc88;border:1px solid #00cc88}
-    .status-failed{background:rgba(255,51,102,.18);color:#ff5c8a;border:1px solid #ff5c8a}
-    .status-loading{background:rgba(45,110,255,.2);color:var(--accent);border:1px solid var(--accent)}
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+                border-radius: 40px;
+            }
+        }
 
-    .warning-glow-modern{
-      background:linear-gradient(115deg,rgba(255,51,102,.12),rgba(255,80,120,.05)); border-radius:40px; padding:16px 20px; margin:22px 0 20px;
-      backdrop-filter:blur(12px); border:1px solid rgba(255,51,102,.45); display:flex; align-items:center; justify-content:center; gap:14px; font-weight:800;
-      animation:softGlow .9s infinite alternate;
-    }
+        /* رأس البطاقة */
+        .header-icon {
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem auto;
+            box-shadow: 0 15px 25px -8px rgba(59,130,246,0.4);
+            animation: float 3s ease-in-out infinite;
+        }
 
-    .input-group-future{position:relative;margin:32px 0 26px}
-    #codeInput{
-      width:100%;padding:18px 30px;border-radius:80px;font-weight:700;text-align:center;font-size:1.1rem;outline:none;transition:.2s;
-      border:1px solid var(--accent);background:var(--input-light);color:var(--input-txt-light);
-    }
-    body.dark #codeInput{background:var(--input-dark);color:var(--input-txt-dark);border-color:#4d7eff}
-    #codeInput:focus{border-color:var(--accent2);box-shadow:0 0 0 4px rgba(45,110,255,.3),0 0 20px var(--accent);transform:scale(1.01)}
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
 
-    .security-notice,.preview-notice,#fileInfo,.file-card-modern,.action-icon-btn{transition:background .2s,color .2s,border-color .2s}
-    body.light .security-notice,body.light .preview-notice,body.light #fileInfo{background:var(--info-light);color:var(--text-light);border:1px solid rgba(0,0,0,.1)}
-    body.dark .security-notice,body.dark .preview-notice,body.dark #fileInfo{background:var(--info-dark);color:var(--text-dark);border:1px solid rgba(80,140,255,.3)}
+        .header-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
 
-    .file-card-modern{
-      background:var(--card-light);backdrop-filter:blur(12px);border:1px solid rgba(45,110,255,.3);flex:0 0 180px;border-radius:32px;padding:20px 12px;
-      text-align:center;cursor:pointer;scroll-snap-align:start;transition:.25s;
-    }
-    body.dark .file-card-modern{background:rgba(18,28,55,.7);color:var(--text-dark)}
-    body.light .file-card-modern{background:rgba(255,255,255,.7);color:var(--text-light)}
-    .file-card-modern i{font-size:2.2rem;color:var(--accent)}
-    .file-card-modern.active{background:linear-gradient(115deg,var(--accent),var(--accent2));color:#fff;transform:scale(1.02)}
-    .file-card-modern.active i{color:#fff}
+        h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 0.3rem;
+        }
 
-    .btn-primary,.btn-secondary,.btn-exam-special{
-      width:100%;border:none;border-radius:60px;padding:15px 20px;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;
-      gap:12px;transition:.25s;cursor:pointer;
-    }
-    .btn-primary,.btn-secondary{color:#fff;background:linear-gradient(105deg,var(--accent),var(--accent2));box-shadow:0 8px 20px -5px var(--accent)}
-    .btn-secondary{background:linear-gradient(105deg,#ff6a3d,var(--danger));box-shadow:0 8px 20px -5px var(--danger-glow);margin-top:12px}
-    .btn-exam-special{background:linear-gradient(105deg,#f7b42c,#fc575e);box-shadow:0 8px 20px -5px rgba(247,180,44,.5);margin-top:12px;color:#2c1a00;font-size:.95rem}
-    body.dark .btn-exam-special{color:#ffecb3;background:linear-gradient(105deg,#e6a017,#d43f47)}
-    .btn-primary:hover,.btn-secondary:hover,.btn-exam-special:hover{transform:translateY(-4px) scale(1.01);filter:brightness(1.07)}
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+        }
 
-    .files-grid{
-      display:flex;flex-wrap:nowrap;overflow-x:auto;gap:18px;padding-bottom:16px;scroll-snap-type:x mandatory;margin:25px 0 30px;-webkit-overflow-scrolling:touch;
-    }
-    .pdf-glass-container{
-      border-radius:42px;overflow:hidden;height:min(68vh,640px);background:rgba(0,0,0,.2);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.2);
-    }
-    #pdfViewer iframe{transition:.2s;width:100%;height:100%;border:none;border-radius:28px}
-    .controls-modern{display:flex;gap:18px;justify-content:center;margin-top:24px;flex-wrap:wrap}
-    .action-icon-btn{
-      background:var(--card-light);backdrop-filter:blur(12px);border:1px solid var(--accent);border-radius:50px;padding:12px 28px;font-weight:700;
-      display:inline-flex;gap:12px;cursor:pointer;transition:.2s;font-size:.9rem;
-    }
-    body.dark .action-icon-btn{background:rgba(18,28,55,.8);color:var(--text-dark)}
-    body.light .action-icon-btn{background:rgba(255,255,255,.8);color:var(--text-light)}
-    .action-icon-btn:hover{transform:translateY(-3px);background:var(--accent);color:#fff;border-color:#fff}
+        .sub-message {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #334155;
+            background: rgba(255,255,240,0.7);
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 0.8rem auto;
+            padding: 0.4rem 1rem;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+        }
 
-    .fullscreen-overlay{position:fixed;inset:0;display:none;z-index:9998;background:#0a0c15;flex-direction:column}
-    .fullscreen-container{width:100%;height:100%;display:flex;flex-direction:column;overflow:auto;-webkit-overflow-scrolling:touch;background:#1a1e2c;position:relative}
-    .fullscreen-iframe{width:100%;height:100vh;min-height:100%;border:none}
-    .floating-exit-btn{
-      position:fixed;top:24px;inset-inline-end:24px;width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);
-      color:#ff3366;font-size:1.6rem;border:1px solid var(--danger);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:.2s;z-index:10000;
-    }
-    .floating-exit-btn.visible{opacity:1;pointer-events:auto}
-    .theme-toggle{
-      position:fixed;top:22px;left:22px;z-index:9999;width:52px;height:52px;border-radius:32px;display:grid;place-items:center;background:rgba(255,255,255,.3);
-      backdrop-filter:blur(16px);cursor:pointer;font-size:1.5rem;box-shadow:0 0 12px rgba(0,0,0,.1);
-    }
-    .shake{animation:shakeAnim .4s}
-    .exam-badge{
-      background:linear-gradient(120deg,#f7b42c,#fc575e);color:#2c1a00;padding:4px 14px;border-radius:40px;font-size:.8rem;font-weight:800;margin-right:12px;
-    }
-    body.dark .exam-badge{background:#e6a017;color:#2d1f00}
+        .warning-text {
+            background: #fff7ed;
+            border-right: 5px solid #f97316;
+            padding: 0.7rem 1rem;
+            border-radius: 28px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #2d3a4b;
+            margin: 0.8rem 0 1.5rem 0;
+        }
 
-    @media (max-width:680px){
-      body{padding:14px} #loginBox{padding:32px 24px} .file-card-modern{flex:0 0 140px;padding:16px 8px} .controls-modern{flex-direction:column}
-      .action-icon-btn{width:100%;justify-content:center;font-size:.85rem;padding:12px 16px} .pdf-glass-container{height:55vh} .btn-exam-special{font-size:.85rem;padding:12px 14px}
-    }
-  </style>
+        /* قسم التحسينات المتقدمة */
+        .extra-section {
+            background: linear-gradient(115deg, #e6f0ff 0%, #f0e6ff 100%);
+            border-radius: 32px;
+            padding: 1.2rem 1.2rem;
+            margin-top: 0.5rem;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+        }
+
+        /* عنوان القسم مع النقطة المضيئة بجانبه */
+        .extra-title {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1rem;
+            border-right: 4px solid #8b5cf6;
+            padding-right: 12px;
+        }
+
+        .title-main {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #3b2e4a;
+        }
+
+        .title-main i {
+            font-size: 1.3rem;
+            color: #7c3aed;
+        }
+
+        /* النقطة المضيئة الصغيرة + نص التحديث */
+        .live-update {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0,0,0,0.05);
+            padding: 3px 10px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #2d3e50;
+            direction: ltr;  /* للنقطة والنص */
+        }
+
+        .live-update .blinking-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 4px #22c55e;
+            animation: blinkPulse 1.2s infinite ease-in-out;
+        }
+
+        @keyframes blinkPulse {
+            0% { opacity: 1; background-color: #22c55e; transform: scale(1); }
+            50% { opacity: 0.4; background-color: #86efac; transform: scale(0.8); }
+            100% { opacity: 1; background-color: #22c55e; transform: scale(1); }
+        }
+
+        .update-text {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 2px;
+        }
+
+        .animated-dots::after {
+            content: " ...";
+            animation: dotsMove 1.5s steps(3, end) infinite;
+            display: inline-block;
+            width: 2em;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        @keyframes dotsMove {
+            0% { content: " ."; }
+            33% { content: " .."; }
+            66% { content: " ..."; }
+            100% { content: " ."; }
+        }
+
+        .extra-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .extra-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #1e293b;
+            background: rgba(255,255,245,0.8);
+            padding: 0.6rem 1rem;
+            border-radius: 50px;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(139,92,246,0.2);
+        }
+
+        .extra-item:hover {
+            background: white;
+            transform: translateX(4px);
+            border-color: #a78bfa;
+        }
+
+        .extra-item i {
+            width: 28px;
+            font-size: 1.1rem;
+            color: #4f46e5;
+            text-align: center;
+        }
+
+        @media (max-width: 550px) {
+            .extra-item {
+                font-size: 0.85rem;
+                padding: 0.5rem 0.8rem;
+                gap: 8px;
+            }
+            .extra-item i {
+                width: 24px;
+                font-size: 1rem;
+            }
+            .title-main {
+                font-size: 1rem;
+            }
+            .live-update {
+                font-size: 0.7rem;
+                padding: 2px 8px;
+            }
+        }
+
+        .footer-note {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #5b6e8c;
+            border-top: 1px solid rgba(100,116,139,0.2);
+            padding-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(59,130,246,0.2);
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .last-update {
+            text-align: center;
+            margin-top: 0.6rem;
+            font-size: 0.7rem;
+            color: #94a3b8;
+        }
+    </style>
 </head>
 <body>
-  <div class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i></div>
-
-  <div id="loginBox" class="glass-panel" style="display:none;">
-    <div class="logo-modern"><i class="fas fa-shield-alt logo-icon"></i><span class="logo-text">ملخصات الصحيح</span></div>
-    <div class="login-header">
-      <h2 style="font-weight:800;font-size:clamp(1.6rem,5vw,2.1rem);background:linear-gradient(130deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;">نظام العرض الآمن</h2>
-      <p style="margin-top:8px;">أدخل كود التسجيل للوصول الفوري | جهاز واحد لكل كود</p>
-    </div>
-    <div id="serverStatus" class="status-pill status-loading"><i class="fas fa-sync-alt fa-spin"></i> جاري الاتصال بالسيرفر...</div>
-    <div class="warning-glow-modern"><i class="fas fa-calendar-exclamation"></i><div>⚠️ سيتم إغلاق الخادم في <strong>1/7/2026</strong> – تواصل معنا: <strong dir="ltr">01553307846</strong></div></div>
-    <div class="input-group-future"><input id="codeInput" type="text" placeholder="مثال: X7G9-12AB" autocomplete="off" maxlength="20" /></div>
-    <button class="btn-primary" onclick="checkCode()"><i class="fas fa-fingerprint"></i> دخول آمن</button>
-    <button class="btn-secondary" onclick="previewWithoutLogin()"><i class="fas fa-eye"></i> معاينة تجريبية</button>
-    <button class="btn-exam-special" onclick="showExamWithoutLogin()"><i class="fas fa-graduation-cap"></i> عرض إمتحان التعيين خاص كلية أصول القاهرة 2026</button>
-    <div id="loading" style="display:none;margin-top:18px;"><div class="spinner" style="width:44px;height:44px;border:4px solid rgba(0,0,0,0.1);border-top-color:var(--accent);border-radius:50%;margin:0 auto;animation:spin .8s linear infinite;"></div><p>جاري التحقق...</p></div>
-    <div class="progress-bar" style="display:none;height:6px;background:rgba(0,0,0,0.1);border-radius:10px;margin-top:12px;"><div class="progress-fill" style="width:0%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:10px;"></div></div>
-    <p id="msg" style="margin-top:14px;font-weight:700;"></p>
-  </div>
-
-  <div id="mainContent" style="display:none;" class="glass-panel">
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px;">
-      <div class="logo-modern" style="margin:0;"><i class="fas fa-shield-alt logo-icon"></i><span class="logo-text">ملخصات الصحيح</span></div>
-      <div id="serverStatusMain" class="status-pill status-loading" style="margin:0;"><i class="fas fa-sync-alt fa-spin"></i> الاتصال...</div>
-    </div>
-
-    <div class="security-notice" style="border-radius:28px;padding:12px 20px;margin-bottom:22px;display:flex;align-items:center;gap:14px;backdrop-filter:blur(8px);">
-      <i class="fas fa-shield-virus" style="color:var(--accent2);"></i>
-      <div><strong>حماية متكاملة</strong> | جميع الملفات محمية | الدعم: 01553307846</div>
-    </div>
-
-    <div id="filesSection">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px;">
-        <h3><i class="fas fa-layer-group"></i> المستندات المتاحة</h3>
-        <div id="filesCount" style="background:var(--card-light);border-radius:40px;padding:6px 22px;font-weight:800;border:1px solid var(--accent);">0 ملفات</div>
-      </div>
-      <div id="filesButtons" class="files-grid"></div>
-    </div>
-
-    <div id="previewNotice" style="display:none;border-radius:30px;padding:14px 20px;margin-bottom:20px;text-align:center;">
-      <i class="fas fa-info-circle"></i> أنت في وضع المعاينة التجريبية. ملف PDF نموذجي للتعريف بالنظام.
-    </div>
-
-    <div id="fileInfo" style="display:none;margin:15px 0;border-radius:34px;padding:16px 24px;backdrop-filter:blur(8px);">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
-        <h3 id="currentFileName"><i class="fas fa-file-pdf"></i> اسم الملف</h3>
-        <span class="file-badge-modern" style="background:linear-gradient(120deg,var(--accent),var(--accent2));border-radius:60px;padding:6px 18px;color:#fff;">PDF محمي</span>
-      </div>
-      <p id="currentFileDescription" style="margin-top:6px;"></p>
-    </div>
-
-    <div class="pdf-glass-container" id="pdfContainer">
-      <div id="pdfViewer" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-        <div style="text-align:center;">
-          <i class="fas fa-file-pdf" style="font-size:4rem;margin-bottom:12px;color:var(--accent);"></i>
-          <h3>اختر ملفاً للعرض</h3>
+    <div class="card">
+        <div class="header-icon">
+            <i class="fas fa-server"></i>
         </div>
-      </div>
+
+        <h1>عذراً ! <span style="font-weight: 700;">يعمل فريقنا على تحديث الخادم حالياً</span></h1>
+        <div style="text-align: center;">
+            <span class="sub-message"><i class="fas fa-tools" style="margin-left: 6px;"></i> لإصلاح بعض المشاكل التي تواجه المستخدمين</span>
+        </div>
+
+        <div class="warning-text">
+            <i class="fas fa-microchip" style="margin-left: 10px; color: #f97316;"></i> 
+            نعمل جاهدين على تحسين تجربتك. جميع التحسينات التالية يتم تطبيقها في هذه المرحلة:
+        </div>
+
+        <!-- قسم التحسينات المتقدمة -->
+        <div class="extra-section">
+            <div class="extra-title">
+                <div class="title-main">
+                    <i class="fas fa-cogs"></i>
+                    <span>تحسينات متقدمة قيد التطوير</span>
+                </div>
+                <!-- النقطة المضيئة الصغيرة بجانب العنوان -->
+                <div class="live-update">
+                    <div class="blinking-dot"></div>
+                    <span class="update-text">جاري التحديث<span class="animated-dots"></span></span>
+                </div>
+            </div>
+            <div class="extra-grid">
+                <div class="extra-item">
+                    <i class="fas fa-lock"></i>
+                    <span>🔒 منع تضارب البيانات عند الاستخدام المتزامن</span>
+                </div>
+                <div class="extra-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>⚡ تحسين سرعة وأداء قاعدة البيانات</span>
+                </div>
+                <div class="extra-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>🛡️ تعزيز الأمان والتحقق من صحة البيانات</span>
+                </div>
+                <div class="extra-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>📊 تتبع أكثر دقة لاستخدام الأكواد</span>
+                </div>
+                <div class="extra-item">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>📝 رسائل خطأ واضحة</span>
+                </div>
+                <div class="extra-item">
+                    <i class="fas fa-random"></i>
+                    <span>حل مشكلة التزامن (Concurrency) أثناء استخدام الأكواد في نفس الوقت</span>
+                </div>
+                <div class="extra-item">
+                    <i class="fas fa-ban"></i>
+                    <span>منع تكرار رسالة "الكود مستخدم على جهاز آخر" بشكل غير صحيح أو متكرر</span>
+                </div>
+                <div class="extra-item">
+                    <i class="fas fa-lock"></i>
+                    <span>إضافة LockService لضمان أمان أعلى ومنع تعارض البيانات أثناء العمليات المتزامنة</span>
+                </div>
+                <div class="extra-item">
+                    <i class="fas fa-database"></i>
+                    <span>تحسين استقرار قاعدة البيانات ومنع حدوث تلف أو تعارض عند تسجيل مستخدمين جدد أو تحديث الأكواد</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <div class="spinner"></div>
+            <span>تحسين البنية التحتية • نعتذر عن أي إزعاج</span>
+            <i class="far fa-smile-wink"></i>
+        </div>
+        <div class="last-update">
+            <i class="fas fa-sync-alt"></i> آخر تحديث للخادم: ترقية مستمرة
+        </div>
     </div>
 
-    <div class="controls-modern">
-      <div class="action-icon-btn" onclick="openFullscreen()"><i class="fas fa-expand-alt"></i> ملء الشاشة</div>
-      <div class="action-icon-btn" onclick="showExamFileInMain()"><i class="fas fa-graduation-cap"></i> عرض إمتحان التعيين خاص كلية أصول القاهرة 2026</div>
-      <div class="action-icon-btn" onclick="goBackToLogin()"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</div>
-    </div>
-  </div>
-
-  <div id="fullscreenOverlay" class="fullscreen-overlay">
-    <div class="fullscreen-container" id="fullscreenContainer"><iframe id="fullscreenViewer" class="fullscreen-iframe" allowfullscreen></iframe></div>
-    <button id="floatingExitBtn" class="floating-exit-btn">✕</button>
-  </div>
-
-  <script>
-    const WEB_APP_URL="https://script.google.com/macros/s/AKfycbxEAM95n8OovOcA3QqHCRJQ9ELrrl4Q3NaedKIvVTPf4SZnitgrVErmR_4N8Cw9wNBUbQ/exec",
-      $=id=>document.getElementById(id), q=s=>document.querySelector(s),
-      EXAM_FILE_ID="1rZKNRAkubL-SOkv8euXWDOtRJvkhhUhq",
-      EXAM_NAME="📘 امتحان التعيين - كلية أصول القاهرة 2026",
-      EXAM_DESC="امتحان التعيين  لكلية أصول الدين  قسم التفسير جامعة القاهرة  2026. بنظام التقييم الحديث.";
-
-    let currentFiles=[], currentDisplayFileId=null, fullscreenActive=false, hideTimeout=null;
-    const overlay=$("fullscreenOverlay"), fsIframe=$("fullscreenViewer"), exitBtn=$("floatingExitBtn"), fullscreenContainer=$("fullscreenContainer"),
-          themeBtn=$("themeToggleBtn"), themeIcon=themeBtn.querySelector("i");
-
-    const setTheme=t=>{
-      const dark=t==="dark";
-      document.body.classList.toggle("dark",dark);
-      document.body.classList.toggle("light",!dark);
-      themeIcon.className=dark?"fas fa-sun":"fas fa-moon";
-      localStorage.setItem("theme",dark?"dark":"light");
-    };
-    const loadStoredTheme=()=>setTheme(localStorage.getItem("theme")==="dark"||localStorage.getItem("theme")==="light" ? localStorage.getItem("theme") : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    const getDriveEmbedUrl=id=>`https://drive.google.com/file/d/${id}/preview`;
-    const getDeviceFingerprint=()=>{const s=navigator.userAgent+navigator.platform+screen.width+screen.height+screen.colorDepth;let h=0;for(let i=0;i<s.length;i++)h=((h<<5)-h)+s.charCodeAt(i),h|=0;return Math.abs(h).toString()};
-    const setStatus=(ok,loading=false)=>{
-      const html=loading?`<i class="fas fa-sync-alt fa-spin"></i> جاري الاتصال بالسيرفر...`:ok?`<i class="fas fa-check-circle"></i> متصل بالخادم الآمن`:`<i class="fas fa-exclamation-triangle"></i> انقطاع الاتصال`,
-            cls=loading?"status-loading":ok?"status-connected":"status-failed";
-      ["serverStatus","serverStatusMain"].forEach(id=>{const el=$(id); if(el){el.className=`status-pill ${cls}`; el.innerHTML=html;}});
-    };
-
-    async function checkServerConnection(){
-      setStatus(false,true);
-      try{
-        const c=new AbortController(), t=setTimeout(()=>c.abort(),1e4), fd=new FormData();
-        fd.append("check","1");
-        const r=await fetch(WEB_APP_URL,{method:"POST",body:fd,signal:c.signal});
-        clearTimeout(t); await r.json(); setStatus(true);
-      }catch{setStatus(false)}
-    }
-
-    function showMessage(text,isError=false){
-      const msg=$("msg");
-      msg.textContent=text;
-      msg.style.cssText=`margin-top:14px;padding:10px 22px;border-radius:50px;display:inline-block;background:${isError?"rgba(255,51,102,0.2)":"rgba(0,200,120,0.18)"};color:${isError?"#ff5c8a":"#00cc88"};font-weight:800;backdrop-filter:blur(4px);`;
-      if(isError)$("codeInput").classList.add("shake");
-      setTimeout(()=>{msg.textContent="";msg.style.cssText="";if(isError)$("codeInput").classList.remove("shake")},4000);
-    }
-
-    const updateProgressBar=p=>{const bar=q(".progress-bar"),fill=q(".progress-fill"); if(bar&&fill){bar.style.display=p>0?"block":"none"; fill.style.width=`${p}%`;}};
-
-    function displayCustomPDF(fileId,fileName,fileDescription,isExternalExam=false){
-      if(!fileId)return;
-      currentDisplayFileId=fileId;
-      $("currentFileName").innerHTML=`<i class="fas fa-file-pdf"></i> ${fileName} ${isExternalExam?'<span class="exam-badge">📌 امتحان التعيين</span>':''}`;
-      $("currentFileDescription").textContent=fileDescription;
-      $("fileInfo").style.display="flex";
-      if(isExternalExam) document.querySelectorAll(".file-card-modern").forEach(btn=>btn.classList.remove("active"));
-      $("pdfViewer").innerHTML=`<div style="display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;"><div class="spinner" style="width:48px;height:48px;border:4px solid rgba(0,0,0,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;"></div><p>جاري تحميل المستند...</p></div>`;
-      setTimeout(()=>{$("pdfViewer").innerHTML=`<iframe src="${getDriveEmbedUrl(fileId)}" allowfullscreen style="width:100%;height:100%;border:none;border-radius:28px;"></iframe>`},200);
-    }
-    const displayPDF=(fileId,fileName="ملف PDF",description="لا يوجد وصف")=>displayCustomPDF(fileId,fileName,description,false);
-
-    function showFile(index){
-      if(!currentFiles.length)return;
-      document.querySelectorAll(".file-card-modern").forEach((btn,i)=>btn.classList.toggle("active",i===index));
-      const f=currentFiles[index];
-      displayPDF(f.id,f.name||`ملف ${index+1}`,f.description||"ملخص دراسي محمي");
-    }
-
-    function createFileButtons(){
-      const wrap=$("filesButtons"); wrap.innerHTML="";
-      currentFiles.forEach((file,idx)=>{
-        const btn=document.createElement("div");
-        btn.className="file-card-modern"+(idx===0?" active":"");
-        btn.innerHTML=`<i class="fas fa-file-pdf"></i><div>${file.name||`ملف ${idx+1}`}</div>`;
-        btn.onclick=()=>showFile(idx);
-        wrap.appendChild(btn);
-      });
-      $("filesCount").innerText=`${currentFiles.length} ملفات`;
-    }
-
-    function showExamWithoutLogin(){
-      $("loginBox").style.display="none"; $("mainContent").style.display="block"; $("filesSection").style.display="none";
-      $("previewNotice").style.display="flex";
-      $("previewNotice").innerHTML=`<i class="fas fa-graduation-cap" style="color:#ffbb33;"></i> أنت تعرض <strong>امتحان التعيين الخاص بكلية أصول القاهرة 2026</strong> (بدون تسجيل دخول). يمكنك العودة لتسجيل الدخول من زر "تسجيل الخروج".`;
-      displayCustomPDF(EXAM_FILE_ID,EXAM_NAME,EXAM_DESC,true); checkServerConnection();
-    }
-
-    function showExamFileInMain(){
-      if($("mainContent").style.display!=="block")return;
-      const notice=$("previewNotice");
-      if(notice.style.display==="flex" && notice.innerHTML.includes("معاينة تجريبية"))
-        notice.innerHTML=`<i class="fas fa-graduation-cap" style="color:#ffbb33;"></i> <strong>امتحان التعيين - كلية أصول القاهرة 2026</strong> (وضع المعاينة) يمكنك تسجيل الدخول لتصفح جميع الملفات.`;
-      if($("filesSection").style.display!=="none") document.querySelectorAll(".file-card-modern").forEach(btn=>btn.classList.remove("active"));
-      displayCustomPDF(EXAM_FILE_ID,EXAM_NAME,EXAM_DESC,true);
-    }
-
-    function previewWithoutLogin(){
-      $("loginBox").style.display="none"; $("mainContent").style.display="block"; $("filesSection").style.display="none";
-      $("previewNotice").style.display="flex";
-      $("previewNotice").innerHTML=`<i class="fas fa-info-circle"></i> أنت في وضع المعاينة التجريبية. ملف PDF نموذجي للتعريف بالنظام.`;
-      displayCustomPDF("173VBPNrH9At_JYXtOLB1ZHXuoGsn_Q1f","معاينة تجريبية - نظام الملخصات","هذا ملف معاينة تجريبي باستخدام العارض المتقدم",false);
-      checkServerConnection();
-    }
-
-    async function checkCode(){
-      const code=$("codeInput").value.trim();
-      if(!code) return showMessage("❗ الرجاء إدخال الكود",true);
-      $("loading").style.display="block"; updateProgressBar(35);
-      const fd=new FormData(); fd.append("code",code); fd.append("deviceId",getDeviceFingerprint());
-      try{
-        const res=await fetch(WEB_APP_URL,{method:"POST",body:fd}), result=await res.json();
-        $("loading").style.display="none"; updateProgressBar(100); setTimeout(()=>updateProgressBar(0),400);
-        if(result.status==="ok"){
-          currentFiles=result.pdfFiles||[];
-          if(!currentFiles.length) return showMessage("لا توجد ملفات مرتبطة بهذا الكود",true);
-          $("loginBox").style.display="none"; $("mainContent").style.display="block"; $("filesSection").style.display="block"; $("previewNotice").style.display="none";
-          createFileButtons(); showFile(0);
-        }else if(result.status==="other_device") showMessage("⚠️ الكود مستخدم على جهاز آخر (جهاز واحد لكل كود)",true);
-        else if(result.status==="invalid") showMessage("❌ كود غير صحيح",true);
-        else showMessage("⚠️ حدث خطأ غير متوقع",true);
-      }catch{
-        $("loading").style.display="none"; updateProgressBar(0); showMessage("⚠️ فشل الاتصال بالخادم",true);
-      }
-    }
-
-    function showFloatingButtonTemporarily(){
-      if(!fullscreenActive)return;
-      exitBtn.classList.add("visible");
-      clearTimeout(hideTimeout);
-      hideTimeout=setTimeout(()=>exitBtn.classList.remove("visible"),2800);
-    }
-    function onFullscreenChange(){ if(!document.fullscreenElement && fullscreenActive) exitFullscreenMode(); }
-    function exitFullscreenMode(){
-      if(document.fullscreenElement){
-        if(document.exitFullscreen) document.exitFullscreen();
-        else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
-      }
-      overlay.style.display="none"; document.body.style.overflow="auto"; fsIframe.src=""; fullscreenActive=false; exitBtn.classList.remove("visible");
-      clearTimeout(hideTimeout); document.removeEventListener("keydown",fullscreenEscapeHandler);
-    }
-    function fullscreenEscapeHandler(e){ if(e.key==="Escape" && fullscreenActive) exitFullscreenMode(); }
-
-    async function openFullscreen(){
-      if(!currentDisplayFileId) return showMessage("لا يوجد ملف لعرضه",true);
-      fsIframe.src=getDriveEmbedUrl(currentDisplayFileId); overlay.style.display="flex"; document.body.style.overflow="hidden";
-      try{ if(overlay.requestFullscreen) await overlay.requestFullscreen(); else if(overlay.webkitRequestFullscreen) await overlay.webkitRequestFullscreen(); }catch(e){ console.warn(e); }
-      fullscreenActive=true; showFloatingButtonTemporarily(); document.addEventListener("keydown",fullscreenEscapeHandler); setTimeout(()=>{fullscreenContainer.scrollTop=0},200);
-    }
-
-    function goBackToLogin(){
-      if(fullscreenActive) exitFullscreenMode();
-      $("mainContent").style.display="none"; $("loginBox").style.display="block"; $("codeInput").value=""; $("filesButtons").innerHTML=""; $("fileInfo").style.display="none";
-      $("previewNotice").style.display="none";
-      $("pdfViewer").innerHTML=`<div style="text-align:center;"><i class="fas fa-file-pdf" style="font-size:4rem;margin-bottom:12px;color:var(--accent);"></i><h3>اختر ملفاً للعرض</h3></div>`;
-      currentFiles=[]; checkServerConnection();
-    }
-
-    function setupFullscreenEvents(){
-      overlay.addEventListener("touchstart",showFloatingButtonTemporarily);
-      overlay.addEventListener("mousemove",showFloatingButtonTemporarily);
-      document.addEventListener("fullscreenchange",onFullscreenChange);
-      document.addEventListener("webkitfullscreenchange",onFullscreenChange);
-      exitBtn.onclick=exitFullscreenMode;
-    }
-
-    document.addEventListener("DOMContentLoaded",()=>{
-      $("loginBox").style.display="block"; $("mainContent").style.display="none"; overlay.style.display="none";
-      $("codeInput").addEventListener("keypress",e=>{if(e.key==="Enter") checkCode()});
-      themeBtn.onclick=()=>setTheme(document.body.classList.contains("dark")?"light":"dark");
-      loadStoredTheme(); checkServerConnection(); setupFullscreenEvents();
-    });
-
-    document.addEventListener("contextmenu",e=>{e.preventDefault(); showMessage("❌ حماية المحتوى: النقر الأيمن معطل",true)});
-    document.addEventListener("keydown",e=>{
-      if((e.ctrlKey||e.metaKey)&&["s","p","c"].includes(e.key.toLowerCase())){e.preventDefault(); showMessage("❌ هذه الخاصية غير مسموح",true); return false}
-      if(e.key==="F12"){e.preventDefault(); showMessage("❌ أدوات المطورين معطلة",true); return false}
-    });
-  </script>
+    <script>
+        (function() {
+            // تأثير بسيط لدخول البطاقة
+            const card = document.querySelector('.card');
+            if(card) {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.97)';
+                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }, 30);
+            }
+            // تأثير ظهور تدريجي للعناصر
+            const items = document.querySelectorAll('.extra-item');
+            items.forEach((item, idx) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(8px)';
+                item.style.transition = `opacity 0.2s ease ${idx * 0.02}s, transform 0.2s ease ${idx * 0.02}s`;
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 80);
+            });
+        })();
+    </script>
 </body>
 </html>
